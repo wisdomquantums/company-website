@@ -5,7 +5,7 @@ import Footer from "@/components/Footer/Footer";
 
 // Lazy-loaded pages for better performance
 const Home = lazy(() => import("@/pages/Home/Home"));
-const WhoWeAre = lazy(() => import("@/pages/Who-We-Are/WhoWeAre"));
+const WhoWeAre = lazy(() => import("@/pages/WhoWeAre/WhoWeAre"));
 const Portfolio = lazy(() => import("@/pages/Portfolio/Portfolio"));
 import ItSolution from "@/pages/ItSolution/ItSolution";
 const Gallery = lazy(() => import("@/pages/Gallery/Gallery"));
