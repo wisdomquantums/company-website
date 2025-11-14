@@ -10,40 +10,43 @@ const __dirname = path.dirname(__filename);
 /**
  * Vite Configuration — WisdomQuantum Solution Pvt. Ltd.
  *
- * Features:
- *  - React + TailwindCSS integration
- *  - Auto HMR (Hot Reload)
- *  - Proxy setup for backend (Express)
- *  - Clean alias for imports (@)
- *  - Optimized build setup
+ * Works on:
+ * - Local Development
+ * - Vercel Production Deployment
+ * - React Router (SPA Pages)
+ * - Alias Support (@)
+ * - Tailwind + JSX Fast Refresh (HMR)
  */
 
 export default defineConfig({
   plugins: [react()],
 
+  // IMPORTANT for Vercel: enables SPA fallback routing
+  appType: "spa",
+
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // allows "@/components/..." etc.
+      "@": path.resolve(__dirname, "src"),
     },
   },
 
   server: {
-    port: 5173, // Frontend dev port
-    open: true, // Auto-open browser
-    host: "0.0.0.0", // Allow LAN access
-    strictPort: true, // Don’t auto-switch port
+    port: 5173,
+    open: true,
+    host: "0.0.0.0",
+    strictPort: true,
 
     watch: {
-      usePolling: true, // Fix for HMR on Windows
+      usePolling: true,
     },
 
     hmr: {
-      overlay: true, // Show compile errors in browser
+      overlay: true,
     },
 
     proxy: {
       "/api": {
-        target: "http://localhost:5000", // Express backend
+        target: "http://localhost:5000",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, "/api"),
@@ -54,7 +57,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
-    chunkSizeWarningLimit: 800, // slightly increased
+
+    chunkSizeWarningLimit: 800,
+
     rollupOptions: {
       output: {
         manualChunks(id) {
