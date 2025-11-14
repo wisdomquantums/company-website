@@ -12,7 +12,7 @@ const Gallery = lazy(() => import("@/pages/Gallery/Gallery"));
 const Technologies = lazy(() => import("@/pages/Technologies/Technologies"));
 const Blogs = lazy(() => import("@/pages/Blog/Blogs"));
 const Careers = lazy(() => import("@/pages/Careers/Careers"));
-const ContactUs = lazy(() => import("@/pages/Contact-Us/ContactUs"));
+const ContactUs = lazy(() => import("@/pages/ContactUs/ContactUs"));
 const NotFound = lazy(() => import("@/pages/NotFound/NotFound")); // optional 404 page
 
 // Scroll to top on route change
