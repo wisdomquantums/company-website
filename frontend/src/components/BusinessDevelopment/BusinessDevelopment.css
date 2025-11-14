@@ -1,0 +1,108 @@
+/* =========================================================
+   Section Fade-in Animation
+   ========================================================= */
+.bd-fade {
+    opacity  : 0;
+    animation: bdFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes bdFadeIn {
+    0% {
+        opacity  : 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   Text Fade-in Animation
+   ========================================================= */
+.bd-text {
+    opacity  : 0;
+    animation: bdTextFade 1.3s ease forwards;
+}
+
+@keyframes bdTextFade {
+    0% {
+        opacity  : 0;
+        transform: translateY(12px);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   Card Smooth Hover + Lift Effect
+   ========================================================= */
+.bd-card {
+    transition: all 0.35s ease;
+}
+
+.bd-card:hover {
+    transform   : translateY(-8px);
+    border-color: rgba(200, 200, 200, 0.45);
+    box-shadow  : 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   Floating Icon Animation
+   ========================================================= */
+.bd-icon {
+    animation: bdFloat 3s ease-in-out infinite;
+}
+
+@keyframes bdFloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   Card Inner Text Smooth Transition
+   ========================================================= */
+.bd-card p,
+.bd-card h3 {
+    transition: color 0.3s ease;
+}
+
+.bd-card:hover p {
+    color: #d1d1d1 !important;
+}
+
+.bd-card:hover h3 {
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   Responsive Adjustments
+   ========================================================= */
+@media (max-width: 768px) {
+    .bd-card {
+        padding: 22px !important;
+    }
+
+    .bd-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 480px) {
+    .bd-card {
+        padding: 20px !important;
+    }
+}

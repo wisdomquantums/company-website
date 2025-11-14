@@ -1,0 +1,217 @@
+/* ================================================
+   GENERAL PAGE
+================================================ */
+.career-page {
+    width         : 100%;
+    background    : #111;
+    color         : #fff;
+    overflow-x    : hidden;
+    padding-bottom: 4rem;
+    font-family   : "Poppins", sans-serif;
+}
+
+/* ================================================
+   HERO SECTION
+================================================ */
+.career-hero {
+    width         : 90%;
+    margin        : 0 auto;
+    text-align    : center;
+    padding-top   : 3rem;
+    padding-bottom: 1rem;
+}
+
+.career-bg-title {
+    font-size  : 5rem;
+    /* SMALLER */
+    font-weight: 900;
+    opacity    : 0.07;
+    margin     : 0;
+}
+
+.career-subtitle {
+    font-size  : 1.4rem;
+    /* SMALLER */
+    margin-top : -2.2rem;
+    font-weight: 500;
+    opacity    : 0.9;
+}
+
+.career-intro {
+    width      : 70%;
+    margin     : 1.5rem auto;
+    font-size  : 0.95rem;
+    /* SMALLER */
+    line-height: 1.6;
+    opacity    : 0.85;
+}
+
+/* ================================================
+   JOB CARDS
+================================================ */
+.career-jobs-container {
+    width          : 90%;
+    margin         : 2rem auto;
+    display        : flex;
+    justify-content: center;
+    /* CENTER ALIGN */
+    gap            : 1.5rem;
+}
+
+.career-job-card {
+    background     : #000;
+    width          : 32%;
+    padding        : 1.5rem;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+    border-radius  : 4px;
+    box-shadow     : 0 0 0 2px #000, 0 0 20px rgba(0, 0, 0, 0.4);
+    font-size      : 0.9rem;
+    /* SMALLER */
+}
+
+.job-title {
+    font-size  : 1.1rem;
+    /* SMALLER */
+    font-weight: 600;
+}
+
+.job-sub {
+    font-size    : 0.9rem;
+    opacity      : 0.75;
+    margin-bottom: 1rem;
+}
+
+.job-info {
+    display      : flex;
+    align-items  : center;
+    gap          : 0.35rem;
+    font-size    : 0.85rem;
+    opacity      : 0.8;
+    margin-bottom: 0.4rem;
+}
+
+.job-arrow {
+    width          : 45px;
+    height         : 45px;
+    background     : #1b1b1b;
+    border-radius  : 50%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    font-size      : 1.3rem;
+    cursor         : pointer;
+    transition     : 0.3s;
+}
+
+.job-arrow:hover {
+    background: #333;
+    transform : scale(1.08);
+}
+
+/* ================================================
+   CONTACT FORM SECTION
+================================================ */
+.career-contact-section {
+    width          : 90%;
+    margin         : 4rem auto;
+    display        : flex;
+    gap            : 2.5rem;
+    justify-content: center;
+    /* CENTER */
+    align-items    : flex-start;
+}
+
+.career-contact-left {
+    width: 38%;
+}
+
+.doubt-heading {
+    font-size  : 2rem;
+    /* SMALLER */
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.doubt-subtext {
+    margin-top: 1.2rem;
+    font-size : 1.2rem;
+    /* SMALLER */
+    opacity   : 0.8;
+}
+
+.career-form-box {
+    width: 55%;
+}
+
+/* form rows */
+.form-row {
+    display      : flex;
+    gap          : 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.form-row input {
+    width     : 100%;
+    padding   : 0.8rem;
+    background: #1a1a1a;
+    border    : 1px solid #333;
+    color     : #fff;
+    font-size : 0.9rem;
+    /* SMALLER */
+}
+
+.career-select {
+    width        : 100%;
+    padding      : 0.9rem;
+    background   : #1a1a1a;
+    color        : #fff;
+    border       : 1px solid #333;
+    margin-bottom: 1.2rem;
+    font-size    : 0.9rem;
+}
+
+.career-textarea {
+    width     : 100%;
+    padding   : 0.9rem;
+    height    : 130px;
+    background: #1a1a1a;
+    color     : #fff;
+    border    : 1px solid #333;
+    font-size : 0.9rem;
+}
+
+.career-submit-btn {
+    width     : 100%;
+    margin-top: 1.5rem;
+    padding   : 0.9rem;
+    background: #fff;
+    color     : #000;
+    font-size : 1.1rem;
+    border    : none;
+    cursor    : pointer;
+}
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+@media (max-width: 900px) {
+    .career-jobs-container {
+        flex-direction: column;
+        width         : 92%;
+    }
+
+    .career-job-card {
+        width: 100%;
+    }
+
+    .career-contact-section {
+        flex-direction: column;
+    }
+
+    .career-contact-left,
+    .career-form-box {
+        width: 100%;
+    }
+}

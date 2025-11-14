@@ -1,0 +1,171 @@
+/* -----------------------------------
+   Global Wrapper
+--------------------------------------*/
+.blog-page {
+    width     : 100%;
+    background: #0d0d0d;
+    color     : white;
+    padding   : 0;
+}
+
+.blog-root {
+    width     : 100%;
+    padding   : 3rem 1rem 5rem;
+    background: #0d0d0d;
+}
+
+/* -----------------------------------
+   Header
+--------------------------------------*/
+.blog-header {
+    text-align   : center;
+    margin-bottom: 2.5rem;
+    animation    : fadeIn 1s ease;
+}
+
+.blog-title {
+    font-size     : clamp(1.4rem, 4vw, 1.9rem);
+    font-weight   : 600;
+    letter-spacing: 1px;
+
+    /* subtle futuristic gradient */
+    background             : linear-gradient(90deg, #ffffff, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0.95;
+}
+
+.blog-subtitle {
+    margin-top: 0.6rem;
+    font-size : clamp(0.8rem, 2vw, 1rem);
+    color     : #cbd5e1;
+
+    background: rgba(255, 255, 255, 0.06);
+    border    : 1px solid rgba(255, 255, 255, 0.08);
+
+    padding      : 0.4rem 1rem;
+    border-radius: 10px;
+
+    display: inline-block;
+}
+
+/* -----------------------------------
+   Grid
+--------------------------------------*/
+.blog-grid {
+    max-width: 1200px;
+    margin   : 0 auto;
+
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap                  : 1.6rem;
+}
+
+/* -----------------------------------
+   Blog Card Minimal + Premium
+--------------------------------------*/
+.blog-card {
+    background     : rgba(255, 255, 255, 0.04);
+    border         : 1px solid rgba(255, 255, 255, 0.06);
+    border-radius  : 16px;
+    overflow       : hidden;
+    backdrop-filter: blur(4px);
+
+    cursor: pointer;
+
+    transition: transform 0.35s ease, box-shadow 0.4s ease, border 0.3s ease;
+}
+
+.blog-card:hover {
+    transform : translateY(-6px) scale(1.015);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+    border    : 1px solid rgba(100, 149, 237, 0.4);
+}
+
+/* -----------------------------------
+   Image Section
+--------------------------------------*/
+.blog-img-wrapper {
+    overflow: hidden;
+    height  : 180px;
+}
+
+.blog-img {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img {
+    transform: scale(1.08);
+}
+
+/* -----------------------------------
+   Content
+--------------------------------------*/
+.blog-info {
+    padding: 1rem 1rem 1.4rem;
+}
+
+.blog-text {
+    font-size    : 0.88rem;
+    line-height  : 1.3rem;
+    font-weight  : 500;
+    color        : #e2e8f0;
+    margin-bottom: 0.8rem;
+}
+
+/* Animated CTA Button */
+.blog-read-btn {
+    font-size: 0.8rem;
+    padding  : 0.45rem 0.8rem;
+
+    background: transparent;
+    border    : 1px solid rgba(255, 255, 255, 0.15);
+    color     : #93c5fd;
+
+    border-radius: 8px;
+    cursor       : pointer;
+    transition   : 0.3s ease;
+}
+
+.blog-read-btn:hover {
+    background  : rgba(147, 197, 253, 0.1);
+    border-color: #60a5fa;
+    transform   : translateX(4px);
+}
+
+/* -----------------------------------
+   Animation
+--------------------------------------*/
+@keyframes fadeIn {
+    from {
+        opacity  : 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/* -----------------------------------
+   Mobile Optimization
+--------------------------------------*/
+@media (max-width: 500px) {
+    .blog-img-wrapper {
+        height: 150px;
+    }
+
+    .blog-text {
+        font-size: 0.82rem;
+    }
+
+    .blog-read-btn {
+        font-size: 0.75rem;
+    }
+}

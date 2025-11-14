@@ -1,0 +1,201 @@
+/* ==========================================================
+   OVERLAY
+========================================================== */
+.inq-overlay {
+    position       : fixed;
+    inset          : 0;
+    background     : rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : 2rem;
+    z-index        : 999;
+}
+
+/* Floating Glow Lights */
+.inq-glow {
+    position     : absolute;
+    width        : 260px;
+    height       : 260px;
+    border-radius: 50%;
+    filter       : blur(80px);
+    opacity      : 0.45;
+    z-index      : -1;
+}
+
+.glow-1 {
+    background: #00ffe7;
+    top       : 12%;
+    left      : 15%;
+}
+
+.glow-2 {
+    background: #7b61ff;
+    bottom    : 10%;
+    right     : 12%;
+}
+
+/* ==========================================================
+   POPUP BOX
+========================================================== */
+.inq-box {
+    max-width      : 480px;
+    width          : 100%;
+    padding        : 2rem;
+    border-radius  : 18px;
+    background     : rgba(22, 22, 22, 0.75);
+    backdrop-filter: blur(22px);
+    border         : 1.4px solid rgba(255, 255, 255, 0.16);
+    color          : #fff;
+    position       : relative;
+    box-shadow     : 0 22px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================
+   CLOSE BUTTON
+========================================================== */
+.inq-close {
+    position  : absolute;
+    top       : 12px;
+    right     : 12px;
+    color     : #dcdcdc;
+    cursor    : pointer;
+    transition: 0.2s;
+}
+
+.inq-close:hover {
+    color    : #fff;
+    transform: scale(1.1);
+}
+
+/* ==========================================================
+   HEADING
+========================================================== */
+.inq-heading {
+    text-align : center;
+    font-size  : 1.9rem;
+    font-weight: 700;
+    color      : #fff;
+}
+
+.inq-sub {
+    text-align   : center;
+    opacity      : 0.75;
+    margin-bottom: 1.4rem;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+.inq-form {
+    display       : flex;
+    flex-direction: column;
+    gap           : 1rem;
+}
+
+.inq-grid-2 {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : 1rem;
+}
+
+.inq-field label {
+    font-size: 0.85rem;
+    opacity  : 0.85;
+    color    : #e5e5e5;
+}
+
+.inq-field input,
+.inq-field select,
+.inq-field textarea {
+    width        : 100%;
+    margin-top   : 6px;
+    padding      : 12px 14px;
+    border-radius: 10px;
+    border       : 1.4px solid rgba(255, 255, 255, 0.25);
+    background   : rgba(255, 255, 255, 0.08);
+    color        : #fff !important;
+    font-size    : 0.95rem;
+    outline      : none;
+    transition   : 0.25s ease;
+}
+
+/* Placeholder more visible */
+.inq-field input::placeholder,
+.inq-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* Active focus */
+.inq-field input:focus,
+.inq-field select:focus,
+.inq-field textarea:focus {
+    border-color: #00ffe7;
+    background  : rgba(0, 0, 0, 0.45);
+    box-shadow  : 0 0 10px rgba(0, 255, 231, 0.25);
+}
+
+/* ==========================================================
+   SELECT DROPDOWN FIX (TEXT + BG VISIBLE)
+========================================================== */
+.inq-field select {
+    color     : #fff !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Dropdown Options */
+.inq-field select option {
+    background: #101010 !important;
+    color     : #fff !important;
+    padding   : 8px;
+    font-size : 0.95rem;
+}
+
+/* ==========================================================
+   TEXTAREA
+========================================================== */
+.inq-field textarea {
+    resize: none;
+    height: 90px;
+}
+
+/* ==========================================================
+   SUBMIT BUTTON
+========================================================== */
+.inq-submit {
+    width        : 100%;
+    padding      : 12px;
+    border-radius: 10px;
+    margin-top   : 0.6rem;
+    font-size    : 1.05rem;
+    background   : linear-gradient(135deg, #00ffe7, #7b61ff);
+    color        : black;
+    font-weight  : 700;
+    cursor       : pointer;
+    border       : none;
+    box-shadow   : 0 8px 26px rgba(0, 255, 231, 0.2);
+    transition   : 0.3s ease;
+}
+
+.inq-submit:hover {
+    opacity  : 0.95;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width: 520px) {
+    .inq-box {
+        padding: 1.6rem;
+    }
+
+    .inq-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .inq-heading {
+        font-size: 1.6rem;
+    }
+}

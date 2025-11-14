@@ -1,0 +1,211 @@
+/* ===========================================================
+   PAGE OVERLAY
+=========================================================== */
+.tech-overlay {
+    position       : fixed;
+    inset          : 0;
+    background     : #000;
+    opacity        : 0;
+    pointer-events : none;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    transition     : 0.4s ease;
+    z-index        : -1;
+}
+
+.tech-overlay.show {
+    opacity       : 1;
+    pointer-events: all;
+    z-index       : 9999;
+}
+
+.tech-loader {
+    color    : white;
+    font-size: 2rem;
+    animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .3;
+    }
+}
+
+/* ===========================================================
+   MAIN AREA
+=========================================================== */
+.tech-page {
+    background    : #121212;
+    padding-bottom: 4rem;
+    color         : white;
+    position      : relative;
+}
+
+/* ===========================================================
+   BACKGROUND TITLE
+=========================================================== */
+.tech-bg-title {
+    position   : absolute;
+    top        : 120px;
+    left       : 50%;
+    transform  : translateX(-50%);
+    font-size  : 8rem;
+    font-weight: 900;
+    opacity    : 0.06;
+    white-space: nowrap;
+}
+
+/* ===========================================================
+   TOP SECTION
+=========================================================== */
+.tech-top {
+    text-align   : center;
+    padding-top  : 3rem;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb {
+    font-size    : 0.9rem;
+    opacity      : 0.7;
+    margin-bottom: 1.5rem;
+}
+
+.tech-mid-title {
+    font-size     : 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom : 2rem;
+}
+
+.tech-heading {
+    font-size    : 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-sub {
+    opacity    : 0.85;
+    width      : 55%;
+    margin     : 0 auto 1.8rem;
+    line-height: 1.6;
+}
+
+.tech-btn {
+    padding      : 0.6rem 1.4rem;
+    background   : white;
+    color        : black;
+    border       : none;
+    border-radius: 4px;
+    font-weight  : 600;
+    cursor       : pointer;
+}
+
+.tech-btn:hover {
+    opacity: 0.85;
+}
+
+/* ===========================================================
+   SECTIONS
+=========================================================== */
+.tech-section {
+    width        : 92%;
+    margin       : 3rem auto;
+    background   : linear-gradient(to bottom, #1b1b1b, #0f0f0f);
+    padding      : 2rem 1rem;
+    border-radius: 6px;
+}
+
+.tech-section-title {
+    font-size    : 2rem;
+    margin-bottom: 2rem;
+    padding      : 1rem 1rem;
+    background   : #111;
+    width        : fit-content;
+    border-radius: 4px;
+}
+
+/* ===========================================================
+   GRID
+=========================================================== */
+.tech-grid {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    row-gap        : 3rem;
+    column-gap     : 0;
+}
+
+.tech-item {
+    width     : 180px;
+    text-align: center;
+    position  : relative;
+}
+
+.tech-item img {
+    width     : 90px;
+    height    : 90px;
+    object-fit: contain;
+    filter    : drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+.tech-item p {
+    margin-top: 0.8rem;
+    font-size : 1rem;
+    opacity   : 0.9;
+}
+
+.tech-divider {
+    width     : 2px;
+    height    : 90%;
+    background: rgba(255, 255, 255, 0.15);
+    position  : absolute;
+    right     : -40px;
+    top       : 5%;
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+@media (max-width: 900px) {
+    .tech-bg-title {
+        font-size: 4rem;
+    }
+
+    .tech-sub {
+        width: 80%;
+    }
+
+    .tech-item {
+        width: 150px;
+    }
+
+    .tech-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .tech-mid-title {
+        font-size: 1.1rem;
+    }
+
+    .tech-section-title {
+        font-size: 1.5rem;
+    }
+
+    .tech-grid {
+        gap: 2rem;
+    }
+
+    .tech-item img {
+        width : 70px;
+        height: 70px;
+    }
+}

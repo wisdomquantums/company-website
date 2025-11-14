@@ -1,0 +1,134 @@
+/* SECTION */
+.wc-section {
+    width     : 100%;
+    background: #101010;
+    padding   : 4rem 1rem;
+    color     : white;
+}
+
+.wc-container {
+    max-width : 1300px;
+    margin    : auto;
+    text-align: center;
+}
+
+/* TOP SUBTITLE */
+.wc-top-sub {
+    font-size     : 1.3rem;
+    letter-spacing: 0.35rem;
+    color         : #c7c7c7;
+    margin-bottom : 0.7rem;
+}
+
+/* MAIN TITLE */
+.wc-title {
+    display        : inline-block;
+    font-size      : 2rem;
+    font-weight    : 700;
+    padding        : 0.5rem 1rem;
+    background     : rgba(255, 255, 255, 0.07);
+    border-radius  : 10px;
+    backdrop-filter: blur(6px);
+    margin-bottom  : 2.5rem;
+}
+
+/* GRID */
+.wc-grid {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+    position       : relative;
+}
+
+@media (max-width: 900px) {
+    .wc-grid {
+        flex-direction: column;
+        gap           : 2.2rem;
+        text-align    : center;
+    }
+}
+
+/* ITEM */
+.wc-item {
+    width         : 23%;
+    position      : relative;
+    padding-inline: 1rem;
+    transition    : 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .wc-item {
+        width: 100%;
+    }
+}
+
+/* ITEM HOVER EFFECT */
+.wc-item:hover {
+    transform: translateY(-8px);
+}
+
+/* ITEM TITLE */
+.wc-item-title {
+    font-size    : 1.15rem;
+    font-weight  : 700;
+    margin-bottom: 0.5rem;
+}
+
+/* ITEM TEXT */
+.wc-item-text {
+    font-size  : 0.92rem;
+    line-height: 1.5rem;
+    color      : #d5d5d5;
+}
+
+/* VERTICAL DIVIDER */
+.wc-divider {
+    position  : absolute;
+    right     : 0;
+    top       : 0;
+    width     : 2px;
+    height    : 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+    .wc-divider {
+        display: none;
+    }
+}
+
+/* ANIMATIONS */
+.animate-fade {
+    opacity  : 0;
+    animation: fadeIn 1.1s ease forwards;
+}
+
+.animate-up {
+    opacity        : 0;
+    animation      : fadeUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity  : 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity  : 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}

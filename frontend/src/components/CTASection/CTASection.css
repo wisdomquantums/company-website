@@ -1,0 +1,123 @@
+/* ROOT SECTION */
+.cta-root {
+    width          : 100%;
+    padding        : 4rem 1rem;
+    background     : #181818;
+    color          : white;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+/* CONTAINER */
+.cta-container {
+    width    : 100%;
+    max-width: 1400px;
+
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    gap            : 2rem;
+
+    flex-wrap: wrap;
+
+    animation: fadeIn 1.2s ease;
+}
+
+/* HEADING */
+.cta-title {
+    flex       : 1.1;
+    font-size  : clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color      : white;
+
+    background   : rgba(0, 0, 0, 0.35);
+    padding      : 0.8rem 1.2rem;
+    border-radius: 8px;
+}
+
+/* 3-color highlighted words */
+.highlight-orange {
+    color: #f97316;
+    /* orange */
+}
+
+.highlight-blue {
+    color: #60a5fa;
+    /* modern blue */
+}
+
+.highlight-pink {
+    color: #ec4899;
+    /* optional if needed */
+}
+
+/* RIGHT TEXT AREA */
+.cta-right {
+    flex      : 1;
+    text-align: right;
+}
+
+/* SUBTEXT */
+.cta-subtext {
+    font-size    : 0.95rem;
+    color        : #d1d5db;
+    line-height  : 1.5;
+    margin-bottom: 1rem;
+    font-style   : italic;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+    background   : #000;
+    color        : white;
+    padding      : 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size    : 0.9rem;
+    font-weight  : 500;
+    border       : 1px solid white;
+
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background  : #222;
+    transform   : translateY(-2px);
+    border-color: #60a5fa;
+    color       : #60a5fa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .cta-container {
+        text-align: center;
+    }
+
+    .cta-right {
+        text-align: center;
+    }
+
+    .cta-title {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-title {
+        font-size: 1.7rem;
+    }
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity  : 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}

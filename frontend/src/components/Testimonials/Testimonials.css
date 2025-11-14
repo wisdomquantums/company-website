@@ -1,0 +1,200 @@
+/* ==========================================================
+   MAIN CONTAINER
+========================================================== */
+
+.testimonials-root {
+    background: #111;
+    color     : white;
+    padding   : 4rem 1rem;
+    width     : 100%;
+    text-align: center;
+}
+
+/* ==========================================================
+   PREMIUM HEADING + SUBTITLE
+========================================================== */
+
+.testimonials-header {
+    margin-bottom: 3.5rem;
+    animation    : fadeIn 1.2s ease-in-out;
+}
+
+.testimonials-title {
+    font-size     : clamp(0.8rem, 2vw, 1.9rem);
+    font-weight   : 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom : 0.7rem;
+
+    background             : linear-gradient(90deg, #ffffff, #93c5fd, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 18px rgba(99, 102, 241, 0.3);
+}
+
+.testimonials-subtitle {
+    display      : inline-block;
+    padding      : 0.5rem 1.5rem;
+    margin-top   : 0.6rem;
+    font-size    : clamp(0.6rem, 2vw, 1.3rem);
+    font-weight  : 500;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(148, 163, 184, 0.1),
+            rgba(255, 255, 255, 0.05));
+
+    color          : #cbd5e1;
+    backdrop-filter: blur(4px);
+    border         : 1px solid rgba(255, 255, 255, 0.08);
+    transition     : 0.35s ease-in-out;
+}
+
+.testimonials-subtitle:hover {
+    transform : translateY(-2px);
+    box-shadow: 0 0 12px rgba(148, 163, 184, 0.35);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity  : 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================
+   MULTI-CARD SLIDER (3 CARDS PER SLIDE)
+========================================================== */
+
+.testimonials-multi-slider {
+    width    : 100%;
+    max-width: 1300px;
+    margin   : 0 auto;
+}
+
+.testimonials-row {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 2rem;
+}
+
+/* ==========================================================
+   TESTIMONIAL CARD
+========================================================== */
+
+.testimonial-card {
+    background   : #1a1a1a;
+    border-radius: 20px;
+    padding      : 2rem;
+    text-align   : left;
+    min-height   : 260px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    position  : relative;
+}
+
+.testimonial-quote-icon {
+    font-size    : 3rem;
+    opacity      : 0.15;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size  : 1.1rem;
+    line-height: 1.7;
+    color      : #e2e8f0;
+}
+
+.testimonial-author {
+    display    : flex;
+    align-items: center;
+    gap        : 1rem;
+    margin-top : 1.5rem;
+}
+
+.testimonial-avatar {
+    width        : 55px;
+    height       : 55px;
+    border-radius: 50%;
+}
+
+.testimonial-name {
+    font-size  : 1.1rem;
+    font-weight: 600;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color    : #94a3b8;
+}
+
+/* ==========================================================
+   DOT NAVIGATION
+========================================================== */
+
+.testimonials-dots {
+    margin-top     : 2rem;
+    display        : flex;
+    justify-content: center;
+    gap            : 8px;
+}
+
+.dot {
+    width        : 30px;
+    height       : 4px;
+    background   : #555;
+    border-radius: 4px;
+    cursor       : pointer;
+    transition   : 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width     : 40px;
+}
+
+/* ==========================================================
+   RESPONSIVE RULES
+========================================================== */
+
+/* Tablets: 2 cards per slide */
+@media (max-width: 900px) {
+    .testimonials-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 card per slide */
+@media (max-width: 600px) {
+    .testimonials-row {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .testimonial-name {
+        font-size: 1rem;
+    }
+
+    .testimonials-title {
+        font-size: 1.9rem;
+    }
+
+    .testimonials-subtitle {
+        font-size: 1rem;
+        padding  : 0.4rem 1rem;
+    }
+}

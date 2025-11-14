@@ -1,0 +1,272 @@
+/* ===========================================================
+   PAGE
+=========================================================== */
+.it-section {
+    width          : 100%;
+    background     : #ffffff;
+    padding        : 3rem 0;
+    display        : flex;
+    justify-content: center;
+}
+
+.it-container {
+    width    : 100%;
+    max-width: 1500px;
+    padding  : 0 2rem;
+}
+
+/* ===========================================================
+   GRID
+=========================================================== */
+.it-grid {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 2.2rem;
+    margin-top           : 1rem;
+}
+
+/* ===========================================================
+   CARD
+=========================================================== */
+.it-card {
+    display      : flex;
+    background   : #000;
+    border-radius: 6px;
+    height       : 220px;
+    overflow     : hidden;
+    box-shadow   : 0 2px 12px rgba(0, 0, 0, 0.35);
+    cursor       : pointer;
+    transition   : 0.3s ease;
+}
+
+.it-card:hover {
+    transform : translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.it-img {
+    width : 40%;
+    height: 100%;
+}
+
+.it-img img {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+}
+
+/* ===========================================================
+   CONTENT
+=========================================================== */
+.it-content {
+    width          : 60%;
+    padding        : 2rem 1.5rem;
+    color          : white;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+}
+
+.it-content h3 {
+    font-size  : 1.5rem;
+    font-weight: 600;
+}
+
+/* ===========================================================
+   BUTTON
+=========================================================== */
+.it-btn {
+    background : none;
+    border     : none;
+    color      : white;
+    font-size  : 0.9rem;
+    cursor     : pointer;
+    display    : flex;
+    gap        : 6px;
+    align-items: center;
+}
+
+.it-btn span {
+    transition: 0.2s;
+}
+
+.it-btn:hover span {
+    transform: translateX(4px);
+}
+
+/* ===========================================================
+   POPUP OVERLAY
+=========================================================== */
+.it-popup-overlay {
+    position       : fixed;
+    inset          : 0;
+    background     : rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    z-index        : 3500;
+    animation      : fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===========================================================
+   POPUP
+=========================================================== */
+.it-popup {
+    background   : #000;
+    width        : 90%;
+    max-width    : 680px;
+    padding      : 2rem;
+    border-radius: 14px;
+    position     : relative;
+    text-align   : center;
+    animation    : popupZoom 0.25s ease;
+}
+
+@keyframes popupZoom {
+    from {
+        transform: scale(0.85);
+        opacity  : 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity  : 1;
+    }
+}
+
+.it-popup-close {
+    position  : absolute;
+    top       : 12px;
+    right     : 12px;
+    background: none;
+    border    : none;
+    color     : white;
+    font-size : 1.4rem;
+    cursor    : pointer;
+}
+
+/* ===========================================================
+   SLIDER
+=========================================================== */
+.it-slider {
+    width        : 100%;
+    height       : 280px;
+    position     : relative;
+    margin-bottom: 1rem;
+}
+
+.it-popup-img {
+    width        : 100%;
+    height       : 100%;
+    object-fit   : cover;
+    border-radius: 12px;
+    animation    : slideFade 0.4s ease;
+}
+
+@keyframes slideFade {
+    from {
+        opacity  : 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-btn {
+    position     : absolute;
+    top          : 50%;
+    transform    : translateY(-50%);
+    background   : rgba(255, 255, 255, 0.15);
+    border       : none;
+    color        : white;
+    font-size    : 2rem;
+    width        : 36px;
+    height       : 36px;
+    border-radius: 50%;
+    cursor       : pointer;
+}
+
+.slide-btn.left {
+    left: 10px;
+}
+
+.slide-btn.right {
+    right: 10px;
+}
+
+/* ===========================================================
+   POPUP CONTENT
+=========================================================== */
+.popup-title {
+    color        : white;
+    font-size    : 1.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.popup-desc {
+    color        : #dcdcdc;
+    font-size    : 1rem;
+    line-height  : 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Button */
+.it-primary-btn {
+    background   : white;
+    color        : black;
+    font-weight  : 600;
+    padding      : 0.8rem 1.6rem;
+    border-radius: 8px;
+    border       : none;
+    cursor       : pointer;
+    width        : 100%;
+    font-size    : 1rem;
+}
+
+.it-primary-btn:hover {
+    background: #e6e6e6;
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+@media (max-width: 1200px) {
+    .it-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .it-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .it-card {
+        height        : auto;
+        flex-direction: column;
+    }
+
+    .it-img {
+        width : 100%;
+        height: 200px;
+    }
+
+    .it-content {
+        width  : 100%;
+        padding: 1.5rem;
+    }
+}

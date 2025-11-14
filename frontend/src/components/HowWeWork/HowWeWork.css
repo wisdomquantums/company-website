@@ -1,0 +1,163 @@
+/* Root Section */
+.hww-root {
+    width     : 100%;
+    padding   : 4rem 1.5rem;
+    background: #111;
+    color     : white;
+    text-align: center;
+}
+
+/* Heading Section */
+.hww-header {
+    margin-bottom: 3rem;
+    animation    : fadeIn 1.2s ease;
+}
+
+.hww-title {
+    font-size     : clamp(1.5rem, 4vw, 2rem);
+    font-weight   : 600;
+    color         : #cbd5e1;
+    letter-spacing: 4px;
+}
+
+.hww-subtitle {
+    font-size : clamp(1.1rem, 4vw, 1.6rem);
+    margin-top: 0.6rem;
+
+    background             : linear-gradient(90deg, #60a5fa, #f472b6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-weight   : 500;
+    letter-spacing: 1px;
+    display       : inline-block;
+    padding       : 0.4rem 1rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* GRID LAYOUT */
+.hww-grid {
+    display              : grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items          : center;
+    gap                  : 2rem;
+    max-width            : 1300px;
+    margin               : 0 auto;
+}
+
+/* SIDE COLUMNS */
+.hww-column {
+    display       : flex;
+    flex-direction: column;
+    gap           : 2rem;
+}
+
+/* CARDS stylish glass effect */
+.hww-card {
+    background     : rgba(255, 255, 255, 0.05);
+    padding        : 1.6rem;
+    border-radius  : 14px;
+    text-align     : left;
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.35s ease;
+}
+
+.hww-card:hover {
+    transform   : translateX(6px);
+    background  : rgba(255, 255, 255, 0.08);
+    border-color: rgba(147, 197, 253, 0.4);
+}
+
+.hww-card h4 {
+    font-size    : 1.1rem;
+    font-weight  : 600;
+    margin-bottom: 0.4rem;
+}
+
+.hww-card p {
+    font-size  : 0.9rem;
+    color      : #d1d5db;
+    line-height: 1.5;
+}
+
+/* CENTER LOGO */
+.hww-center {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.hww-logo-wrapper {
+    width          : 220px;
+    height         : 220px;
+    border-radius  : 50%;
+    background     : radial-gradient(circle, #222, #111);
+    box-shadow     : 0 0 50px rgba(255, 255, 255, 0.05);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    animation: glowPulse 4s infinite ease-in-out;
+}
+
+.hww-logo {
+    width    : 65%;
+    animation: rotateSlow 12s infinite linear;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .hww-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hww-center {
+        order        : -1;
+        margin-bottom: 2rem;
+    }
+
+    .hww-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity  : 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 20px rgba(147, 197, 253, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(147, 197, 253, 0.25);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(147, 197, 253, 0.1);
+    }
+}

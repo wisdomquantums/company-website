@@ -1,0 +1,244 @@
+/* SECTION */
+.vm-section {
+    width          : 100%;
+    background     : #0b0b0b;
+    padding        : 4rem 1.5rem;
+    display        : flex;
+    justify-content: center;
+}
+
+.vm-container {
+    max-width            : 1320px;
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    gap                  : 3rem;
+    align-items          : center;
+}
+
+@media (max-width: 1024px) {
+    .vm-container {
+        grid-template-columns: 1fr;
+        text-align           : center;
+    }
+}
+
+/* LEFT SIDE */
+.vm-left {
+    color         : white;
+    display       : flex;
+    flex-direction: column;
+    gap           : 1.1rem;
+}
+
+.vm-title {
+    font-size    : 2rem;
+    font-weight  : 700;
+    padding      : 0.45rem 1rem;
+    background   : rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.vm-subtext {
+    font-size : 1rem;
+    color     : #dadada;
+    font-style: italic;
+}
+
+.vm-desc {
+    font-size  : 0.9rem;
+    color      : #bfbfbf;
+    line-height: 1.7;
+}
+
+.vm-btn {
+    padding      : 0.65rem 1.6rem;
+    margin-top   : 0.5rem;
+    background   : #111;
+    border       : 1px solid #444;
+    color        : #eee;
+    border-radius: 6px;
+    transition   : 0.3s ease;
+}
+
+.vm-btn:hover {
+    background: #1a1a1a;
+    transform : translateY(-3px);
+}
+
+/* BIGGER CIRCLE */
+.vm-right {
+    display        : flex;
+    justify-content: center;
+}
+
+.vm-circle {
+    width        : 460px;
+    /* BIGGER CIRCLE */
+    height       : 460px;
+    /* BIGGER CIRCLE */
+    border-radius: 50%;
+    background   : #111;
+    border       : 1px solid #222;
+    position     : relative;
+    overflow     : hidden;
+    transition   : 0.3s ease;
+}
+
+.vm-circle:hover {
+    transform: scale(1.02);
+}
+
+/* CROSS LINES */
+.vm-cross-vertical,
+.vm-cross-horizontal {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.vm-cross-vertical {
+    width   : 1px;
+    height  : 100%;
+    position: absolute;
+    left    : 50%;
+}
+
+.vm-cross-horizontal {
+    height  : 1px;
+    width   : 100%;
+    position: absolute;
+    top     : 50%;
+}
+
+/* QUADRANTS */
+.vm-q {
+    position       : absolute;
+    width          : 50%;
+    height         : 50%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+/* ICON BG DARK, TEXT BG LIGHTER */
+.icon-bg {
+    background: #0a0a0a;
+}
+
+.text-bg {
+    background: #161616;
+}
+
+.vm-q1 {
+    top : 0;
+    left: 0;
+}
+
+.vm-q2 {
+    top  : 0;
+    right: 0;
+}
+
+.vm-q3 {
+    bottom: 0;
+    left  : 0;
+}
+
+.vm-q4 {
+    bottom: 0;
+    right : 0;
+}
+
+/* CONTENT INSIDE QUADRANTS */
+.vm-q-inner {
+    padding: 0.7rem;
+    width  : 100%;
+    height : 100%;
+    display: flex;
+}
+
+.icon-only {
+    justify-content: center;
+    align-items    : center;
+}
+
+.text-only {
+    flex-direction : column;
+    justify-content: center;
+    gap            : 0.4rem;
+}
+
+.text-right-align {
+    text-align   : right;
+    padding-right: 1rem;
+}
+
+.text-center-align {
+    text-align: center;
+}
+
+/* TEXT STYLES */
+.vm-heading {
+    font-size  : 1rem;
+    font-weight: 700;
+    color      : #fff;
+}
+
+.vm-text {
+    font-size  : 0.82rem;
+    color      : #d2d2d2;
+    line-height: 1.45;
+}
+
+/* ICONS SAME SIZE */
+.vm-icon {
+    width    : 60px;
+    height   : 60px;
+    animation: floatIcon 3s infinite ease-in-out;
+}
+
+.icon-yellow {
+    color: #ffcc33;
+}
+
+.icon-blue {
+    color: #3aa0ff;
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATIONS */
+.animate-fade-up {
+    opacity  : 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity  : 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .vm-circle {
+        width : 360px;
+        height: 360px;
+    }
+}
