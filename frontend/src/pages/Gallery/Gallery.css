@@ -5,54 +5,55 @@
     width     : 100%;
     background: #1a1a1a;
     min-height: 100vh;
-    padding   : 0 2rem 4rem;
-    /* left-right margin added */
+
+    /* FIX NAV OVERLAP */
+    padding: 7rem 2rem 4rem;
+
     overflow-x: hidden;
     color     : white;
 
     display       : flex;
     flex-direction: column;
     align-items   : center;
-    /* center everything */
 }
 
 /* ===========================================================
    TOP HEADING AREA
 =========================================================== */
 .gallery-hero {
-    text-align    : center;
-    width         : 100%;
-    padding-top   : 3.5rem;
-    padding-bottom: 1rem;
+    text-align   : center;
+    width        : 100%;
+    margin-bottom: 1.5rem;
 }
 
 .gallery-title {
-    font-size     : 5rem;
+    font-size     : 4.8rem;
     font-weight   : 900;
-    letter-spacing: 2px;
     opacity       : 0.08;
-    /* same original color */
-    margin        : 0 auto;
-    width         : fit-content;
+    letter-spacing: 2px;
+
+    margin: 0 auto;
+    width : fit-content;
 }
 
 .gallery-sub {
-    margin-top : -1.8rem;
+    margin-top : -1.6rem;
     font-size  : 1.4rem;
     font-weight: 500;
     opacity    : 0.9;
-    /* same original color */
 }
 
 /* ===========================================================
-   GRID LAYOUT — EXACT 3-COLUMN LOOK
+   GRID LAYOUT
 =========================================================== */
 .gallery-grid {
-    width    : 100%;
-    max-width: 1500px;
-    /* center grid width */
-    margin   : 3rem auto 0;
-    padding  : 0;
+    width        : 100%;
+    max-width    : 1500px;
+    /* Center limit */
+    margin-inline: auto;
+    /* PERFECT LEFT/RIGHT CENTERING */
+
+    margin-top: 2.5rem;
 
     display              : grid;
     grid-template-columns: repeat(3, 1fr);
@@ -63,53 +64,115 @@
 }
 
 /* ===========================================================
-   CARD (BLACK FRAME + IMAGE INSIDE)
+   CARD
 =========================================================== */
 .gallery-card {
     width        : 100%;
     background   : #0f0f0f;
     border-radius: 4px;
     padding      : 0.6rem;
-    box-shadow   : 0 0 0 3px #000, 0 0 20px rgba(0, 0, 0, 0.4);
+
+    box-shadow: 0 0 0 3px #000,
+        0 0 20px rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform : translateY(-5px);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.55);
 }
 
 .gallery-card img {
     width        : 100%;
     height       : 100%;
     object-fit   : cover;
-    display      : block;
     border-radius: 3px;
 }
 
 /* ===========================================================
    RESPONSIVE
 =========================================================== */
+
+/* Large Screens */
+@media (max-width: 1400px) {
+    .gallery-section {
+        padding: 7rem 2rem 4rem;
+    }
+}
+
+/* 2 COLUMN layout */
 @media (max-width: 1200px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width            : 1000px;
+        gap                  : 1.6rem;
+    }
+
+    .gallery-title {
+        font-size: 4rem;
     }
 }
 
+/* Tablets */
+@media (max-width: 900px) {
+    .gallery-section {
+        padding: 7rem 1.6rem 3.5rem;
+    }
+
+    .gallery-title {
+        font-size: 3.6rem;
+    }
+
+    .gallery-sub {
+        margin-top: -1.2rem;
+        font-size : 1.2rem;
+    }
+}
+
+/* Mobile: 1 column */
 @media (max-width: 780px) {
     .gallery-grid {
         grid-template-columns: 1fr;
-        max-width            : 600px;
+        max-width            : 550px;
+        gap                  : 1.4rem;
+        margin-inline        : auto;
     }
-}
 
-@media (max-width: 600px) {
     .gallery-title {
         font-size: 3rem;
         opacity  : 0.09;
     }
+}
 
-    .gallery-sub {
-        margin-top: -1rem;
-        font-size : 1.1rem;
+/* Small screens */
+@media (max-width: 500px) {
+    .gallery-section {
+        padding: 6rem 1.2rem 3rem;
+        /* keeps mobile spacing clean */
     }
 
-    .gallery-section {
-        padding: 0 1rem 3rem;
+    .gallery-title {
+        font-size: 2.4rem;
+    }
+
+    .gallery-sub {
+        font-size : 1.05rem;
+        margin-top: -0.8rem;
+    }
+
+    .gallery-card {
+        padding: 0.5rem;
+    }
+}
+
+/* Smallest phones */
+@media (max-width: 380px) {
+    .gallery-title {
+        font-size: 2rem;
+    }
+
+    .gallery-sub {
+        font-size: 0.95rem;
     }
 }

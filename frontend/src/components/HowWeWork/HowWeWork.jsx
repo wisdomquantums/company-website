@@ -1,6 +1,6 @@
 import React from "react";
 import "./HowWeWork.css";
-import centerLogo from "@/assets/images/how/logo.jpg";
+import centerLogo from "@/assets/images/logo1.png";
 
 export default function HowWeWork() {
   const steps = [

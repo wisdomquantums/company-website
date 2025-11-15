@@ -1,77 +1,99 @@
-/* =====================================================================
+/* =======================================================
    GLOBAL WRAPPER
-===================================================================== */
-.who-section {
+======================================================= */
+.wq-section {
     width         : 100%;
     background    : #111;
     color         : white;
-    padding-bottom: 4rem;
     overflow-x    : hidden;
     font-family   : system-ui, sans-serif;
+    padding-bottom: 4rem;
+
+    /* FIX NAV OVERLAP */
+    padding-top: 7rem;
 }
 
-/* =====================================================================
-   HERO SECTION
-===================================================================== */
-.hero {
-    text-align : center;
-    padding-top: 4rem;
+/* =======================================================
+   HERO
+======================================================= */
+.wq-hero {
+    text-align: center;
 }
 
-.hero-title {
-    font-size     : 4.2rem;
+.wq-hero-title {
+    font-size     : 4rem;
     font-weight   : 900;
     opacity       : 0.08;
     letter-spacing: 4px;
     margin-bottom : -1.8rem;
 }
 
-.hero-subtitle {
-    font-size: 1.35rem;
+.wq-hero-subtitle {
+    font-size: 1.3rem;
     opacity  : 0.92;
 }
 
-/* =====================================================================
-   HANDSHAKE BANNER
-===================================================================== */
-.banner {
-    max-width: 1200px;
-    margin   : 3rem auto;
+/* RESPONSIVE HERO */
+@media (max-width: 768px) {
+    .wq-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .wq-hero-subtitle {
+        font-size: 1.1rem;
+    }
 }
 
-.banner-img {
+/* =======================================================
+   BANNER SECTION
+======================================================= */
+.wq-banner {
+    max-width     : 1200px;
+    margin        : 3rem auto;
+    padding-inline: 1rem;
+}
+
+.wq-banner-img {
     width        : 100%;
     border-radius: 6px;
     object-fit   : cover;
 }
 
-/* =====================================================================
-   COMPANY INTRO SECTION
-===================================================================== */
-.intro {
+/* =======================================================
+   INTRO SECTION
+======================================================= */
+.wq-intro {
     max-width     : 1100px;
     margin        : 3rem auto;
     text-align    : center;
     padding-inline: 1rem;
 }
 
-.intro-title {
-    font-size  : 1.9rem;
+.wq-intro-title {
+    font-size  : 1.8rem;
     font-weight: 700;
-    line-height: 2.5rem;
+    line-height: 2.4rem;
 }
 
-.intro-text {
+.wq-intro-text {
     margin-top : 1.2rem;
     color      : #d2d2d2;
     line-height: 1.8rem;
     font-size  : 1rem;
 }
 
-/* =====================================================================
+/* Mobile Fix */
+@media (max-width: 600px) {
+    .wq-intro-title {
+        font-size  : 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+/* =======================================================
    FOUNDER SECTION
-===================================================================== */
-.founder-section {
+======================================================= */
+.wq-founder-section {
     max-width     : 1300px;
     margin        : 4rem auto;
     display       : flex;
@@ -81,85 +103,86 @@
 }
 
 @media (max-width: 950px) {
-    .founder-section {
+    .wq-founder-section {
         flex-direction: column;
         text-align    : center;
     }
 }
 
-.founder-left {
+.wq-founder-left {
     flex: 1;
 }
 
-.founder-role {
+.wq-founder-role {
     font-size  : 1.6rem;
     color      : #ffd500;
     font-weight: 600;
 }
 
-.founder-name {
+.wq-founder-name {
     font-size  : 2rem;
     font-weight: 800;
     margin-top : 0.3rem;
 }
 
-.founder-desc {
+.wq-founder-desc {
     margin-top : 1rem;
     color      : #cccccc;
     line-height: 1.7rem;
 }
 
-.founder-social {
+.wq-founder-social {
     margin-top: 2rem;
     display   : flex;
     gap       : 1rem;
 }
 
 @media (max-width: 950px) {
-    .founder-social {
+    .wq-founder-social {
         justify-content: center;
     }
 }
 
-.social-icon {
+.wq-social-icon {
     font-size : 2rem;
     cursor    : pointer;
     color     : #ffffffcc;
     transition: 0.3s ease;
 }
 
-.social-icon:hover {
+.wq-social-icon:hover {
     transform: translateY(-4px);
     color    : #00aaff;
 }
 
-.founder-right {
+/* Image */
+.wq-founder-right {
     flex      : 1;
     text-align: center;
 }
 
-.founder-img {
+.wq-founder-img {
     width        : 100%;
     max-width    : 520px;
     border-radius: 6px;
     object-fit   : cover;
 }
 
-/* =====================================================================
-   TEAM SECTION TITLE
-===================================================================== */
-.team-header {
+/* =======================================================
+   TEAM SECTION HEADER
+======================================================= */
+.wq-team-header {
     margin-top: 4rem;
     text-align: center;
 }
 
-.team-sub {
+.wq-team-sub {
     font-size     : 1.5rem;
     letter-spacing: 0.35rem;
     color         : #c9c9c9;
 }
 
-.team-title {
+.wq-team-title {
     margin-top   : 0.7rem;
     display      : inline-block;
     background   : rgba(255, 255, 255, 0.08);
@@ -168,10 +191,22 @@
     border-radius: 8px;
 }
 
-/* =====================================================================
-   TEAM GRID + FLIP CARDS
-===================================================================== */
-.team-grid {
+/* Mobile adjustments */
+@media (max-width: 700px) {
+    .wq-team-sub {
+        font-size     : 1.1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .wq-team-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* =======================================================
+   TEAM GRID
+======================================================= */
+.wq-team-grid {
     max-width            : 1300px;
     margin               : 3rem auto;
     display              : grid;
@@ -181,27 +216,34 @@
 }
 
 @media (max-width: 1000px) {
-    .team-grid {
+    .wq-team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 700px) {
-    .team-grid {
+    .wq-team-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* CARD WRAPPER */
-.flip-card {
+/* =======================================================
+   TEAM FLIP CARDS
+======================================================= */
+.wq-flip-card {
     position   : relative;
     width      : 100%;
     height     : 450px;
     perspective: 1300px;
 }
 
-/* CARD INNER SHARED PROPERTIES */
-.flip-inner {
+@media (max-width: 600px) {
+    .wq-flip-card {
+        height: 380px;
+    }
+}
+
+.wq-flip-inner {
     position           : absolute;
     width              : 100%;
     height             : 100%;
@@ -211,19 +253,17 @@
     transition         : transform 0.85s cubic-bezier(0.29, 0.01, 0.31, 1);
 }
 
-/* FRONT SIDE */
-.flip-front {
+.wq-flip-front {
     transform: rotateY(0deg);
-    z-index  : 2;
 }
 
-.team-img {
+.wq-team-img {
     width     : 100%;
     height    : 100%;
     object-fit: cover;
 }
 
-.team-info {
+.wq-team-info {
     position  : absolute;
     bottom    : 0;
     width     : 100%;
@@ -232,27 +272,12 @@
     text-align: center;
 }
 
-.team-info h3 {
-    font-size  : 1.35rem;
-    font-weight: 700;
-}
-
-.team-info p {
-    opacity   : 0.95;
-    margin-top: 3px;
-}
-
-.team-info span {
-    font-size: 0.92rem;
-    opacity  : 0.75;
-}
-
 /* BACK SIDE */
-.flip-back {
+.wq-flip-back {
     transform: rotateY(180deg);
 }
 
-.team-overlay {
+.wq-team-overlay {
     position       : absolute;
     inset          : 0;
     background     : rgba(0, 0, 0, 0.75);
@@ -264,7 +289,7 @@
     text-align     : center;
 }
 
-.team-quote {
+.wq-team-quote {
     font-size    : 1.3rem;
     font-style   : italic;
     color        : white;
@@ -272,7 +297,7 @@
     max-width    : 85%;
 }
 
-.team-icon {
+.wq-team-icon {
     background   : white;
     color        : #0a66c2;
     font-size    : 2rem;
@@ -282,33 +307,33 @@
     transition   : 0.3s;
 }
 
-.team-icon:hover {
+.wq-team-icon:hover {
     transform: scale(1.18);
 }
 
-/* FLIP ON HOVER */
-.flip-card:hover .flip-front {
+/* FLIP ANIMATION */
+.wq-flip-card:hover .wq-flip-front {
     transform: rotateY(-180deg);
 }
 
-.flip-card:hover .flip-back {
+.wq-flip-card:hover .wq-flip-back {
     transform: rotateY(0deg);
 }
 
-/* =====================================================================
+/* =======================================================
    ANIMATIONS
-===================================================================== */
-.animate-fade {
+======================================================= */
+.wq-animate-fade {
     opacity  : 0;
-    animation: fadeIn 1.1s ease forwards;
+    animation: wqFadeIn 1.1s ease forwards;
 }
 
-.animate-up {
+.wq-animate-up {
     opacity  : 0;
-    animation: fadeUp 1.2s ease forwards;
+    animation: wqFadeUp 1.2s ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes wqFadeIn {
     from {
         opacity  : 0;
         transform: translateY(20px);
@@ -320,7 +345,7 @@
     }
 }
 
-@keyframes fadeUp {
+@keyframes wqFadeUp {
     from {
         opacity  : 0;
         transform: translateY(40px);

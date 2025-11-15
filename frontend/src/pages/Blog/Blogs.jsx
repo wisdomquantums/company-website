@@ -1,110 +1,117 @@
 import React, { useEffect, useState } from "react";
 import "./Blogs.css";
+import insta from "../../assets/images/blogs/insta.webp";
+import fb from "../../assets/images/blogs/fb.webp";
+import x from "../../assets/images/blogs/x.png";
+import linkedin from "../../assets/images/blogs/linkedin.png";
+
+import blog1 from "../../assets/images/blogs/blog1.webp";
+import blog2 from "../../assets/images/blogs/blog2.webp";
+import blog3 from "../../assets/images/blogs/blog3.jpg";
+import blog4 from "../../assets/images/blogs/blog4.png";
+import blog5 from "../../assets/images/blogs/blog5.jpg";
+import blog6 from "../../assets/images/blogs/blog6.jpg";
+import blog7 from "../../assets/images/blogs/blog7.png";
+import blog8 from "../../assets/images/blogs/blog8.webp";
 
 export default function Blogs() {
-  const [overlay, setOverlay] = useState(true);
-
-  useEffect(() => {
-    const t = setTimeout(() => setOverlay(false), 500);
-    return () => clearTimeout(t);
-  }, []);
+  // ============================
+  // UPDATED CONTENT
+  // ============================
 
   const topPosts = [
-    "Why Does Your Digital Marketing Strategy Need to Include AI?",
-    "What is DevOps & Its Importance in Software Development",
-    "Why Your Website Isn’t Ranking | Web Development Mistakes Hurting SEO",
-    "Top 10 UX/UI Design Mistakes That Are Killing Your Conversions",
+    "How AI is Reshaping Digital Marketing Strategies in 2025",
+    "Understanding DevOps: A Complete Guide for Modern Businesses",
+    "Top Web Development Mistakes That Destroy Your SEO Rankings",
+    "Major UX/UI Design Errors That Reduce Conversions & Trust",
   ];
 
   const socialLinks = [
     {
       name: "Instagram",
-      url: "https://www.instagram.com/profcymaglobal/",
-      icon: "/blogs/insta.png",
+      url: "https://www.instagram.com/wisdomquantum/",
+      icon: insta,
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/company/71181720/admin/dashboard/",
-      icon: "/blogs/linkedin.png",
+      url: "https://www.linkedin.com/company/wisdomquantum/",
+      icon: linkedin,
     },
     {
       name: "Twitter",
-      url: "https://x.com/?logout=1732798679923",
-      icon: "/blogs/twitter.png",
+      url: "https://twitter.com/wisdomquantum",
+      icon: x,
     },
     {
       name: "Facebook",
-      url: "https://www.facebook.com/profcymaglobal",
-      icon: "/blogs/facebook.png",
+      url: "https://www.facebook.com/wisdomquantum",
+      icon: fb,
     },
   ];
 
   const heroBlogs = [
     {
-      title: "Why Does Your Digital Marketing Strategy Need to Include AI?",
-      img: "/blogs/blog1.jpg",
-      date: "23 Nov 2024",
-      desc: "In today’s fast-paced digital world, staying ahead requires more than creativity...",
+      title: "How AI Elevates Digital Marketing & Customer Experience",
+      img: blog1,
+      date: "12 Jan 2025",
+      desc: "AI is transforming content creation, targeting, and customer engagement. Discover how brands use AI to gain a competitive edge...",
     },
     {
-      title: "What is DevOps & Its Importance in Software Development",
-      img: "/blogs/blog2.jpg",
-      date: "26 Nov 2024",
-      desc: "In today’s fast-paced digital landscape, efficient software delivery is essential...",
+      title: "DevOps Essentials: Improving Delivery Speed & Reliability",
+      img: blog2,
+      date: "18 Jan 2025",
+      desc: "Businesses adopting DevOps have seen dramatic improvements in development cycles, automation, and team collaboration...",
     },
     {
-      title: "Why Does Your Digital Marketing Strategy Need to Include AI?",
-      img: "/blogs/blog1.jpg",
-      date: "23 Nov 2024",
-      desc: "In today’s fast-paced digital world, staying ahead requires more than creativity...",
+      title: "The Future of Software Engineering with AI Automation",
+      img: blog3,
+      date: "22 Jan 2025",
+      desc: "AI-driven development tools are reshaping the software lifecycle. From automated code generation to intelligent debugging, discover how AI is redefining productivity and reducing human error in engineering teams...",
     },
     {
-      title: "What is DevOps & Its Importance in Software Development",
-      img: "/blogs/blog2.jpg",
-      date: "26 Nov 2024",
-      desc: "In today’s fast-paced digital landscape, efficient software delivery is essential...",
+      title: "Cloud Transformation Strategies for Modern Businesses",
+      img: blog4,
+      date: "27 Jan 2025",
+      desc: "Scalable infrastructure, reduced operational costs, and global accessibility make cloud adoption essential. Learn how companies migrate smoothly using structured cloud strategies and security-focused deployments...",
     },
   ];
 
   const secondRowBlogs = [
     {
-      title: "Why Your Website Isn’t Ranking | Web Dev Mistakes Hurting SEO",
-      img: "/blogs/blog3.jpg",
-      date: "26 Sep 2025",
-      desc: "You’ve spent money on marketing, yet your site still isn’t ranking. Why?",
+      title: "Why Your Website Fails to Rank — Hidden SEO & UX Issues",
+      img: blog5,
+      date: "08 Feb 2025",
+      desc: "Ranking depends on speed, structure, keywords, and mobile experience. Here’s what most websites are missing...",
     },
     {
-      title: "Top 10 UX/UI Design Mistakes That Are Killing Your Conversions",
-      img: "/blogs/blog4.jpg",
-      date: "26 Sep 2025",
-      desc: "Even small UI/UX mistakes can frustrate visitors and reduce engagement...",
+      title: "The Most Common UX/UI Flaws That Hurt Conversions",
+      img: blog6,
+      date: "10 Feb 2025",
+      desc: "Poor spacing, confusing navigation, and weak CTAs can drastically reduce conversions. Learn how to fix them...",
     },
     {
-      title: "Why Your Website Isn’t Ranking | Web Dev Mistakes Hurting SEO",
-      img: "/blogs/blog3.jpg",
-      date: "26 Sep 2025",
-      desc: "You’ve spent money on marketing, yet your site still isn’t ranking. Why?",
+      title:
+        "How Slow Websites Kill Sales — Fix Performance Before It Hurts Revenue",
+      img: blog7,
+      date: "14 Feb 2025",
+      desc: "Website speed directly affects sales, bounce rate, and customer trust. Learn how optimizing load time, caching, and media can instantly boost conversions...",
     },
     {
-      title: "Top 10 UX/UI Design Mistakes That Are Killing Your Conversions",
-      img: "/blogs/blog4.jpg",
-      date: "26 Sep 2025",
-      desc: "Even small UI/UX mistakes can frustrate visitors and reduce engagement...",
+      title:
+        "Design Psychology: How Colors, Layout & Micro-Interactions Influence Users",
+      img: blog8,
+      date: "16 Feb 2025",
+      desc: "Great UI is more than visuals. It’s psychology. Discover how color theory, contrast, spacing, and animation guide user decisions and improve engagement...",
     },
   ];
 
   return (
     <>
-      {/* OVERLAY */}
-      <div className={`blogs-overlay ${overlay ? "show" : ""}`}>
-        <div className="blogs-loader">Loading...</div>
-      </div>
-
       <main className="blogs-section">
         <h1 className="blogs-bg-title">Blogs</h1>
 
         <p className="blogs-subtitle">
-          The Power of Digital Transformation in Modern Enterprises
+          Insights & Strategies Powering the Future of Digital Transformation
         </p>
 
         <div className="blogs-layout">
@@ -126,7 +133,7 @@ export default function Blogs() {
 
             {/* SOCIAL LINKS */}
             <div className="left-box">
-              <div className="left-box-header">Social Media Links</div>
+              <div className="left-box-header">Connect With Us</div>
 
               <div className="social-list">
                 {socialLinks.map((item, i) => (
@@ -137,7 +144,7 @@ export default function Blogs() {
                     target="_blank"
                   >
                     <img src={item.icon} alt={item.name} />
-                    <span>{item.url}</span>
+                    <span>{item.name}</span>
                   </a>
                 ))}
               </div>

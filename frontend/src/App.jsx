@@ -11,7 +11,7 @@ import Router from "./router";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-light text-dark">
+    <div className="flex flex-col min-h-screen bg-light text-dark">
       <Router />
     </div>
   );

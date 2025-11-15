@@ -1,211 +1,218 @@
-/* ===========================================================
-   PAGE OVERLAY
-=========================================================== */
-.tech-overlay {
-    position       : fixed;
-    inset          : 0;
-    background     : #000;
-    opacity        : 0;
-    pointer-events : none;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    transition     : 0.4s ease;
-    z-index        : -1;
-}
-
-.tech-overlay.show {
-    opacity       : 1;
-    pointer-events: all;
-    z-index       : 9999;
-}
-
-.tech-loader {
-    color    : white;
-    font-size: 2rem;
-    animation: pulse 1.4s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% {
-        opacity: .3;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: .3;
-    }
-}
-
-/* ===========================================================
-   MAIN AREA
-=========================================================== */
+/* =======================================================
+   PAGE WRAPPER — SAME LIKE WQ SECTION
+======================================================= */
 .tech-page {
-    background    : #121212;
+    width      : 100%;
+    background : #111;
+    color      : #fff;
+    font-family: system-ui, sans-serif;
+
+    /* SAME TOP SPACING LIKE WQ */
+    padding-top   : 7rem;
     padding-bottom: 4rem;
-    color         : white;
-    position      : relative;
+
+    overflow-x: hidden;
 }
 
-/* ===========================================================
-   BACKGROUND TITLE
-=========================================================== */
+/* =======================================================
+   BACKGROUND TITLE — SAME STYLE
+======================================================= */
 .tech-bg-title {
-    position   : absolute;
-    top        : 120px;
-    left       : 50%;
-    transform  : translateX(-50%);
-    font-size  : 8rem;
-    font-weight: 900;
-    opacity    : 0.06;
-    white-space: nowrap;
+    font-size     : 4rem;
+    font-weight   : 900;
+    opacity       : 0.08;
+    letter-spacing: 4px;
+    text-align    : center;
+    margin-bottom : -1.8rem;
 }
 
-/* ===========================================================
-   TOP SECTION
-=========================================================== */
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tech-bg-title {
+        font-size: 2.8rem;
+    }
+}
+
+/* =======================================================
+   TOP INTRO SECTION — SAME PADDING + WIDTH
+======================================================= */
 .tech-top {
-    text-align   : center;
-    padding-top  : 3rem;
-    margin-bottom: 2rem;
+    max-width     : 1300px;
+    /* SAME AS WQ CONTENT WIDTH */
+    margin        : 3rem auto;
+    text-align    : center;
+    padding-inline: 1rem;
+    /* SAME LEFT/RIGHT SAFE AREA */
 }
 
 .breadcrumb {
-    font-size    : 0.9rem;
-    opacity      : 0.7;
-    margin-bottom: 1.5rem;
+    opacity  : 0.65;
+    font-size: 0.95rem;
 }
 
 .tech-mid-title {
-    font-size     : 1.4rem;
-    letter-spacing: 1px;
-    margin-bottom : 2rem;
+    margin-top: 0.8rem;
+    font-size : 1.1rem;
+    color     : #dcdcdc;
 }
 
 .tech-heading {
     font-size    : 2rem;
-    margin-bottom: 0.5rem;
+    margin-top   : 0.6rem;
+    background   : rgba(255, 255, 255, 0.08);
+    display      : inline-block;
+    padding      : 0.4rem 1rem;
+    border-radius: 8px;
 }
 
 .tech-sub {
-    opacity    : 0.85;
-    width      : 55%;
-    margin     : 0 auto 1.8rem;
-    line-height: 1.6;
+    margin-top: 0.5rem;
+    font-size : 1rem;
+    color     : #cfcfcf;
 }
 
 .tech-btn {
-    padding      : 0.6rem 1.4rem;
-    background   : white;
-    color        : black;
-    border       : none;
-    border-radius: 4px;
-    font-weight  : 600;
-    cursor       : pointer;
+    margin-top   : 1.5rem;
+    padding      : 0.7rem 2rem;
+    border-radius: 8px;
+    background   : #111;
+    border       : 1px solid #444;
+    color        : #fff;
+    transition   : 0.3s;
 }
 
 .tech-btn:hover {
-    opacity: 0.85;
+    background: #1b1b1b;
+    transform : translateY(-3px);
 }
 
-/* ===========================================================
-   SECTIONS
-=========================================================== */
+/* =======================================================
+   SECTION HEADER — SAME SPACING
+======================================================= */
 .tech-section {
-    width        : 92%;
-    margin       : 3rem auto;
-    background   : linear-gradient(to bottom, #1b1b1b, #0f0f0f);
-    padding      : 2rem 1rem;
-    border-radius: 6px;
+    max-width     : 1300px;
+    /* SAME CONTAINER WIDTH AS WQ */
+    margin        : 4rem auto 3rem auto;
+    padding-inline: 1rem;
+    /* SAME LEFT/RIGHT PADDING */
 }
 
 .tech-section-title {
-    font-size    : 2rem;
+    text-align   : center;
+    font-size    : 1.6rem;
+    font-weight  : 600;
     margin-bottom: 2rem;
-    padding      : 1rem 1rem;
-    background   : #111;
-    width        : fit-content;
-    border-radius: 4px;
+    color        : #eaeaea;
 }
 
-/* ===========================================================
-   GRID
-=========================================================== */
+/* =======================================================
+   GRID — EXACT 4 PER ROW + LEFT/RIGHT SAFE MARGINS
+======================================================= */
 .tech-grid {
-    display        : flex;
-    flex-wrap      : wrap;
-    justify-content: center;
-    row-gap        : 3rem;
-    column-gap     : 0;
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap                  : 2.2rem;
+    justify-items        : center;
 }
 
-.tech-item {
-    width     : 180px;
-    text-align: center;
-    position  : relative;
-}
-
-.tech-item img {
-    width     : 90px;
-    height    : 90px;
-    object-fit: contain;
-    filter    : drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
-}
-
-.tech-item p {
-    margin-top: 0.8rem;
-    font-size : 1rem;
-    opacity   : 0.9;
-}
-
-.tech-divider {
-    width     : 2px;
-    height    : 90%;
-    background: rgba(255, 255, 255, 0.15);
-    position  : absolute;
-    right     : -40px;
-    top       : 5%;
-}
-
-/* ===========================================================
-   RESPONSIVE
-=========================================================== */
+/* Tablet */
 @media (max-width: 900px) {
-    .tech-bg-title {
-        font-size: 4rem;
-    }
-
-    .tech-sub {
-        width: 80%;
-    }
-
-    .tech-item {
-        width: 150px;
-    }
-
-    .tech-divider {
-        display: none;
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
-    .tech-mid-title {
-        font-size: 1.1rem;
-    }
-
-    .tech-section-title {
-        font-size: 1.5rem;
-    }
-
     .tech-grid {
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap                  : 1.6rem;
+    }
+}
+
+/* =======================================================
+   TECH ITEM — CENTER ALIGNED LIKE WQ CARDS
+======================================================= */
+.tech-item {
+    text-align: center;
+    width     : 100%;
+    max-width : 180px;
+}
+
+/* =======================================================
+   ICON — BIG, CENTERED, GLOW, ANIMATION
+======================================================= */
+.tech-icon {
+    width        : 95px;
+    height       : 95px;
+    border-radius: 18px;
+    background   : #111;
+    border       : 1px solid #333;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin         : auto;
+
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.25),
+        inset 0 0 10px rgba(0, 209, 255, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.tech-icon svg {
+    width    : 45px;
+    height   : 45px;
+    color    : #00d1ff;
+    animation: pulse 2.1s infinite ease-in-out, rotateSlight 6s infinite ease-in-out;
+}
+
+/* HOVER EFFECTS — SAME STYLE FEEL AS WQ HOVER */
+.tech-item:hover .tech-icon {
+    transform: scale(1.12);
+    box-shadow: 0 0 28px rgba(0, 209, 255, 0.55),
+        inset 0 0 12px rgba(0, 209, 255, 0.25);
+}
+
+.tech-item:hover svg {
+    color: #5be8ff;
+}
+
+/* TEXT UNDER ICON */
+.tech-item p {
+    margin-top    : 0.8rem;
+    font-size     : 1rem;
+    letter-spacing: 0.4px;
+    opacity       : 0.9;
+}
+
+/* =======================================================
+   ANIMATIONS — SAME SMOOTH STYLE
+======================================================= */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
     }
 
-    .tech-item img {
-        width : 70px;
-        height: 70px;
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateSlight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }

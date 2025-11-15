@@ -1,38 +1,48 @@
-/* MAIN PAGE */
+/* ======================================================
+   PAGE BASE
+====================================================== */
 .blogs-section {
     background    : #1a1a1a;
-    padding-bottom: 4rem;
     color         : #fff;
+    padding-bottom: 4rem;
+
+    /* Fix navbar overlap */
+    padding-top: 6.5rem;
 }
 
-/* BACKGROUND TITLE */
+/* ======================================================
+   MAIN TITLES
+====================================================== */
 .blogs-bg-title {
     text-align : center;
-    font-size  : 7rem;
+    font-size  : 4.5rem;
     font-weight: 900;
     opacity    : 0.08;
-    margin-top : 3rem;
+    margin-top : 1rem;
 }
 
 .blogs-subtitle {
     text-align    : center;
-    margin-top    : -2rem;
+    margin-top    : -1.5rem;
     font-size     : 1.6rem;
     letter-spacing: 2px;
     opacity       : 0.9;
 }
 
-/* LAYOUT */
+/* ======================================================
+   MAIN LAYOUT
+====================================================== */
 .blogs-layout {
-    margin-top   : 3rem;
-    width        : 90%;
-    max-width    : 1650px;
-    margin-inline: auto;
-    display      : flex;
-    gap          : 3rem;
+    width    : 90%;
+    max-width: 1650px;
+    margin   : 2.5rem auto 0 auto;
+    display  : flex;
+    gap      : 3rem;
 }
 
-/* LEFT PANEL */
+/* ======================================================
+   LEFT SIDEBAR
+====================================================== */
 .blogs-left {
     width      : 350px;
     flex-shrink: 0;
@@ -45,7 +55,7 @@
     padding      : 1.2rem 1rem;
 }
 
-/* ANGLED HEADER */
+/* Angled Header */
 .left-box-header {
     background : #333;
     padding    : 0.8rem 1rem;
@@ -62,7 +72,7 @@
     border-left: 30px solid transparent;
 }
 
-/* TOP POSTS */
+/* Top Posts Scroll Section */
 .top-posts-list {
     margin-top   : 1rem;
     max-height   : 300px;
@@ -92,7 +102,7 @@
     line-height: 1.4;
 }
 
-/* SOCIAL LINKS */
+/* Social Links */
 .social-item {
     display    : flex;
     gap        : 1rem;
@@ -105,7 +115,9 @@
     height: 45px;
 }
 
-/* RIGHT SIDE BLOGS */
+/* ======================================================
+   RIGHT BLOG CARDS AREA
+====================================================== */
 .blogs-right {
     flex: 1;
 }
@@ -117,7 +129,7 @@
     margin-bottom        : 2.5rem;
 }
 
-/* BLOG CARD */
+/* Blog Card */
 .blog-card {
     background: transparent;
 }
@@ -126,13 +138,14 @@
     width        : 100%;
     height       : 270px;
     object-fit   : cover;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .blog-card.big img {
-    height: 300px;
+    height: 320px;
 }
 
+/* Blog Overlay */
 .blog-overlay {
     margin-top: -90px;
     padding   : 1rem;
@@ -157,7 +170,9 @@
     font-size  : 1rem;
 }
 
-/* OVERLAY LOAD ANIMATION */
+/* ======================================================
+   LOADING OVERLAY
+====================================================== */
 .blogs-overlay {
     position      : fixed;
     inset         : 0;
@@ -180,10 +195,26 @@
     font-size: 1.4rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1100px) {
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+
+/* Large tablets & small laptops */
+@media (max-width: 1200px) {
+    .blogs-bg-title {
+        font-size: 4rem;
+    }
+
+    .blogs-left {
+        width: 300px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
     .blogs-layout {
         flex-direction: column;
+        width         : 92%;
     }
 
     .blogs-left {
@@ -192,5 +223,60 @@
 
     .blogs-row {
         grid-template-columns: 1fr;
+    }
+
+    .blogs-bg-title {
+        font-size: 3.5rem;
+    }
+
+    .blogs-subtitle {
+        font-size : 1.3rem;
+        margin-top: -1.2rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .blogs-bg-title {
+        font-size: 2.8rem;
+    }
+
+    .blogs-subtitle {
+        font-size : 1.1rem;
+        margin-top: -1rem;
+    }
+
+    .top-post-item {
+        gap: 0.8rem;
+    }
+
+    .post-number {
+        width    : 45px;
+        height   : 45px;
+        font-size: 1.6rem;
+    }
+
+    .blog-card img {
+        height: 230px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .blogs-bg-title {
+        font-size: 2.2rem;
+    }
+
+    .blogs-subtitle {
+        font-size : 1rem;
+        margin-top: -0.8rem;
+    }
+
+    .blog-card img {
+        height: 210px;
+    }
+
+    .blog-desc {
+        font-size: 0.9rem;
     }
 }

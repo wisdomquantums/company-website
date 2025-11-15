@@ -12,14 +12,16 @@ export default function Portfolio() {
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add("inview");
+          if (e.isIntersecting) e.target.classList.add("wq-port-inview");
         });
       },
       { threshold: 0.12 }
     );
 
     observerRef.current = obs;
-    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    document
+      .querySelectorAll(".wq-port-reveal")
+      .forEach((el) => obs.observe(el));
 
     return () => {
       if (observerRef.current) {
@@ -29,16 +31,16 @@ export default function Portfolio() {
     };
   }, []);
 
-  /* Re-observe on tab switch */
+  /* Re-observe on tab change */
   useEffect(() => {
     const t = setTimeout(() => {
       if (!observerRef.current) return;
 
-      document.querySelectorAll(".reveal").forEach((el) => {
-        if (!el.classList.contains("inview")) observerRef.current.observe(el);
+      document.querySelectorAll(".wq-port-reveal").forEach((el) => {
+        if (!el.classList.contains("wq-port-inview"))
+          observerRef.current.observe(el);
       });
     }, 60);
-
     return () => clearTimeout(t);
   }, [tab]);
 
@@ -151,45 +153,44 @@ export default function Portfolio() {
       : "Discover beautifully crafted mobile apps designed for efficiency, smooth user experience, and fast performance across devices.";
 
   /* ===============================
-        CARD COMPONENT (3D)
+        CARD COMPONENT
   =============================== */
 
   const Card = ({ item, variant = "standard" }) => {
     return (
-      <article className={`card-3d reveal ${variant}`}>
-        <div className="card-top">
-          <div className="card-notch">
+      <article className={`wq-port-card ${variant} wq-port-reveal`}>
+        <div className="wq-port-card-top">
+          <div className="wq-port-notch">
             {item.logo ? (
-              <img src={item.logo} className="notch-logo" alt="logo" />
+              <img src={item.logo} className="wq-port-notch-logo" alt="logo" />
             ) : (
-              <span className="notch-title">{item.title}</span>
+              <span className="wq-port-notch-title">{item.title}</span>
             )}
           </div>
 
-          <div className="card-media">
+          <div className="wq-port-card-media">
             <img src={item.img} alt={item.title} />
-            <div className="media-overlay">
+            <div className="wq-port-media-overlay">
               <span>{item.title}</span>
             </div>
           </div>
         </div>
 
-        <div className="card-body">
-          <h3 className="card-title">{item.title}</h3>
-          <p className="card-desc">{item.desc}</p>
+        <div className="wq-port-card-body">
+          <h3 className="wq-port-card-title">{item.title}</h3>
+          <p className="wq-port-card-desc">{item.desc}</p>
 
-          <div className="card-actions">
+          <div className="wq-port-card-actions">
             <a
               href="#!"
-              className="btn-outline"
+              className="wq-port-btn-outline"
               onClick={(e) => e.preventDefault()}
             >
               View
             </a>
-
             <a
               href="#!"
-              className="btn-primary"
+              className="wq-port-btn-primary"
               onClick={(e) => e.preventDefault()}
             >
               Demo
@@ -205,21 +206,22 @@ export default function Portfolio() {
   =============================== */
 
   return (
-    <main className="portfolio-wrapper">
-      <div className="hero">
-        <h1 className="hero-title">Portfolio</h1>
+    <main className="wq-port-wrapper">
+      <div className="wq-port-hero">
+        <h1 className="wq-port-hero-title">Portfolio</h1>
       </div>
 
-      <div className="portfolio-tabs">
-        <div className="tabs-pill">
+      <div className="wq-port-tabs">
+        <div className="wq-port-tabs-pill">
           <button
-            className={`tab-btn ${tab === "website" ? "active" : ""}`}
+            className={`wq-port-tab-btn ${tab === "website" ? "active" : ""}`}
             onClick={() => setTab("website")}
           >
             Website
           </button>
+
           <button
-            className={`tab-btn ${tab === "mobile" ? "active" : ""}`}
+            className={`wq-port-tab-btn ${tab === "mobile" ? "active" : ""}`}
             onClick={() => setTab("mobile")}
           >
             Mobile Application
@@ -227,32 +229,32 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <section className="intro reveal">
-        <h2 className="intro-title">{headingText}</h2>
-        <p className="intro-text">{headingSub}</p>
+      <section className="wq-port-intro wq-port-reveal">
+        <h2 className="wq-port-intro-title">{headingText}</h2>
+        <p className="wq-port-intro-text">{headingSub}</p>
       </section>
 
       {/* WEBSITE TAB */}
       {tab === "website" && (
         <>
-          <section className="grid reveal">
+          <section className="wq-port-grid wq-port-reveal">
             {ecommerceWebsites.map((c, i) => (
               <Card key={i} item={c} />
             ))}
           </section>
 
-          <section className="gaming-section reveal">
-            <h3 className="section-head">Our Gaming Websites</h3>
-            <div className="grid grid-compact">
+          <section className="wq-port-section wq-port-reveal">
+            <h3 className="wq-port-section-head">Our Gaming Websites</h3>
+            <div className="wq-port-grid wq-port-grid-compact">
               {gamingWebsites.map((c, i) => (
                 <Card key={i} item={c} variant="dark" />
               ))}
             </div>
           </section>
 
-          <section className="gaming-section reveal">
-            <h3 className="section-head">Our Website Landing Pages</h3>
-            <div className="grid grid-compact">
+          <section className="wq-port-section wq-port-reveal">
+            <h3 className="wq-port-section-head">Our Website Landing Pages</h3>
+            <div className="wq-port-grid wq-port-grid-compact">
               {landingPages.map((c, i) => (
                 <Card key={i} item={c} />
               ))}
@@ -264,24 +266,28 @@ export default function Portfolio() {
       {/* MOBILE TAB */}
       {tab === "mobile" && (
         <>
-          <section className="grid reveal">
+          <section className="wq-port-grid wq-port-reveal">
             {mobileEcomApps.map((c, i) => (
               <Card key={i} item={c} />
             ))}
           </section>
 
-          <section className="gaming-section reveal">
-            <h3 className="section-head">Our Mobile Gaming Applications</h3>
-            <div className="grid grid-compact">
+          <section className="wq-port-section wq-port-reveal">
+            <h3 className="wq-port-section-head">
+              Our Mobile Gaming Applications
+            </h3>
+            <div className="wq-port-grid wq-port-grid-compact">
               {mobileGaming.map((c, i) => (
                 <Card key={i} item={c} variant="dark" />
               ))}
             </div>
           </section>
 
-          <section className="gaming-section reveal">
-            <h3 className="section-head">Our Social Mobile Applications</h3>
-            <div className="grid grid-compact">
+          <section className="wq-port-section wq-port-reveal">
+            <h3 className="wq-port-section-head">
+              Our Social Mobile Applications
+            </h3>
+            <div className="wq-port-grid wq-port-grid-compact">
               {socialApps.map((c, i) => (
                 <Card key={i} item={c} />
               ))}

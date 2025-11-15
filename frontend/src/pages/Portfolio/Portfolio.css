@@ -1,24 +1,26 @@
 /* ===========================================================
    GLOBAL WRAPPER
 =========================================================== */
-
-.portfolio-wrapper {
+.wq-port-wrapper {
     width         : 100%;
     background    : #0a0a0a;
-    padding-bottom: 6rem;
     color         : #fff;
     font-family   : system-ui, sans-serif;
     overflow-x    : hidden;
+    padding-bottom: 4rem;
+
+    /* FIX NAV OVERLAP */
+    padding-top: 7rem;
 }
 
 /* Smooth reveal animation */
-.reveal {
+.wq-port-reveal {
     opacity   : 0;
     transform : translateY(35px);
     transition: 0.8s ease;
 }
 
-.reveal.inview {
+.wq-port-inview {
     opacity  : 1;
     transform: translateY(0);
 }
@@ -26,13 +28,11 @@
 /* ===========================================================
    HERO
 =========================================================== */
-
-.hero {
-    text-align : center;
-    padding-top: 4.4rem;
+.wq-port-hero {
+    text-align: center;
 }
 
-.hero-title {
+.wq-port-hero-title {
     font-size     : 4rem;
     font-weight   : 900;
     opacity       : 0.08;
@@ -40,42 +40,62 @@
     margin        : 0;
 }
 
+/* HERO RESPONSIVE */
+@media (max-width: 1024px) {
+    .wq-port-hero-title {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wq-port-hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wq-port-hero-title {
+        font-size: 2rem;
+    }
+}
+
 /* ===========================================================
    TABS
 =========================================================== */
-
-.portfolio-tabs {
+.wq-port-tabs {
     display        : flex;
     justify-content: center;
     margin-top     : 3rem;
 }
 
-.tabs-pill {
+.wq-port-tabs-pill {
     display        : flex;
     background     : rgba(255, 255, 255, 0.05);
     padding        : 6px;
     border-radius  : 50px;
     border         : 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
+    flex-wrap      : nowrap;
 }
 
-.tab-btn {
+.wq-port-tab-btn {
     padding      : 12px 32px;
     font-size    : 1rem;
     background   : transparent;
-    border       : 0;
+    border       : none;
     cursor       : pointer;
     color        : #fff;
     border-radius: 40px;
     font-weight  : 600;
     transition   : 0.35s;
+    white-space  : nowrap;
 }
 
-.tab-btn:hover {
+.wq-port-tab-btn:hover {
     background: rgba(255, 255, 255, 0.12);
 }
 
-.tab-btn.active {
+.wq-port-tab-btn.active {
     background : #fff;
     color      : #000;
     font-weight: 700;
@@ -83,33 +103,51 @@
     box-shadow : 0 10px 25px rgba(255, 255, 255, 0.18);
 }
 
-/* ===========================================================
-   INTRO SECTION
-=========================================================== */
+/* TABS MOBILE FIX */
+@media (max-width: 480px) {
+    .wq-port-tabs-pill {
+        flex-wrap: wrap;
+        padding  : 8px;
+    }
 
-.intro {
+    .wq-port-tab-btn {
+        width     : 100%;
+        margin-top: 6px;
+    }
+}
+
+/* ===========================================================
+   INTRO
+=========================================================== */
+.wq-port-intro {
     max-width     : 900px;
     margin        : 3rem auto 2rem;
     text-align    : center;
     padding-inline: 1rem;
 }
 
-.intro-title {
+.wq-port-intro-title {
     font-size  : 2rem;
     font-weight: 700;
 }
 
-.intro-text {
+.wq-port-intro-text {
     margin-top : 0.6rem;
     opacity    : 0.85;
     line-height: 1.7rem;
 }
 
+/* MOBILE */
+@media (max-width: 480px) {
+    .wq-port-intro-title {
+        font-size: 1.5rem;
+    }
+}
+
 /* ===========================================================
    GRID
 =========================================================== */
-
-.grid {
+.wq-port-grid {
     max-width            : 1300px;
     margin               : 2.5rem auto;
     padding-inline       : 1rem;
@@ -118,15 +156,21 @@
     gap                  : 2rem;
 }
 
-.grid-compact {
+.wq-port-grid-compact {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* ===========================================================
-   3D CARD DESIGN
-=========================================================== */
+/* MOBILE GRID FIX */
+@media (max-width: 400px) {
+    .wq-port-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
-.card-3d {
+/* ===========================================================
+   CARD — 3D EFFECT
+=========================================================== */
+.wq-port-card {
     background     : linear-gradient(180deg, #121212, #0d0d0d);
     border-radius  : 14px;
     overflow       : hidden;
@@ -137,18 +181,17 @@
     cursor         : pointer;
 }
 
-.card-3d:hover {
+.wq-port-card:hover {
     transform : translateY(-14px) rotateX(4deg) rotateY(-4deg);
     box-shadow: 0 28px 45px rgba(0, 0, 0, 0.55);
 }
 
-/* Top section */
-.card-top {
+/* Top Notch */
+.wq-port-card-top {
     position: relative;
 }
 
-/* Notch */
-.card-notch {
+.wq-port-notch {
     height      : 40px;
     background  : #fff;
     clip-path   : polygon(0 0, 78% 0, 70% 100%, 0% 100%);
@@ -157,36 +200,50 @@
     padding-left: 16px;
 }
 
-.notch-logo {
+.wq-port-notch-logo {
     height: 26px;
 }
 
-.notch-title {
+.wq-port-notch-title {
     color      : #000;
     font-size  : 1rem;
     font-weight: 600;
 }
 
 /* Media */
-.card-media {
+.wq-port-card-media {
     position: relative;
     width   : 100%;
     height  : 250px;
     overflow: hidden;
 }
 
-.card-media img {
+/* MEDIA RESPONSIVE */
+@media (max-width: 768px) {
+    .wq-port-card-media {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wq-port-card-media {
+        height: 180px;
+    }
+}
+
+.wq-port-card-media img {
     width     : 100%;
     height    : 100%;
     object-fit: cover;
     transition: 0.5s ease;
 }
 
-.card-3d:hover .card-media img {
+.wq-port-card:hover .wq-port-card-media img {
     transform: scale(1.08);
 }
 
-.media-overlay {
+/* Overlay */
+.wq-port-media-overlay {
     position       : absolute;
     inset          : 0;
     background     : rgba(0, 0, 0, 0.55);
@@ -197,70 +254,72 @@
     transition     : 0.45s ease;
 }
 
-.card-3d:hover .media-overlay {
+.wq-port-card:hover .wq-port-media-overlay {
     opacity: 1;
 }
 
-.media-overlay span {
+.wq-port-media-overlay span {
     font-size  : 1.3rem;
     font-weight: 700;
 }
 
-/* Body */
-.card-body {
+/* Card Body */
+.wq-port-card-body {
     padding: 1.2rem;
 }
 
-.card-title {
+.wq-port-card-title {
     font-size    : 1.2rem;
     font-weight  : 700;
     margin-bottom: 0.5rem;
 }
 
-.card-desc {
+.wq-port-card-desc {
     opacity  : 0.85;
     font-size: 0.95rem;
 }
 
 /* CTA Buttons */
-.card-actions {
+.wq-port-card-actions {
     display   : flex;
     gap       : 1rem;
     margin-top: 1.2rem;
 }
 
-.btn-outline,
-.btn-primary {
+.wq-port-btn-outline,
+.wq-port-btn-primary {
     padding        : 8px 18px;
     border-radius  : 6px;
     font-size      : 0.9rem;
-    text-decoration: none;
     cursor         : pointer;
     transition     : 0.35s;
     border         : 1.6px solid #fff;
+    text-decoration: none;
 }
 
-.btn-outline {
+/* Outline */
+.wq-port-btn-outline {
     background: transparent;
     color     : #fff;
 }
 
-.btn-outline:hover {
+.wq-port-btn-outline:hover {
     background: #fff;
     color     : #000;
 }
 
-.btn-primary {
+/* Primary */
+.wq-port-btn-primary {
     background: #fff;
     color     : #000;
 }
 
-.btn-primary:hover {
+.wq-port-btn-primary:hover {
     background: #ddd;
 }
 
 /* DARK VARIANT */
-.card-3d.dark {
+.wq-port-card.dark {
     background  : #0b0b0b;
     border-color: #2a2a2a;
 }
@@ -268,59 +327,22 @@
 /* ===========================================================
    SECTION HEADINGS
 =========================================================== */
-
-.gaming-section {
+.wq-port-section {
     max-width     : 1300px;
     margin        : 4rem auto;
     padding-inline: 1rem;
 }
 
-.section-head {
+.wq-port-section-head {
     font-size    : 2.2rem;
     font-weight  : 700;
     margin-bottom: 2rem;
     text-align   : center;
 }
 
-/* ===========================================================
-   RESPONSIVE
-=========================================================== */
-
-@media (max-width: 1024px) {
-    .hero-title {
-        font-size: 3.4rem;
-    }
-
-    .grid {
-        gap: 1.7rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.6rem;
-    }
-
-    .card-media {
-        height: 200px;
-    }
-}
-
+/* MOBILE */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .tabs-pill {
-        flex-wrap: wrap;
-    }
-
-    .tab-btn {
-        width     : 100%;
-        margin-top: 6px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
+    .wq-port-section-head {
+        font-size: 1.7rem;
     }
 }

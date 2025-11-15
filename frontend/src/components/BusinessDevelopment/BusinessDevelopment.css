@@ -1,108 +1,140 @@
-/* =========================================================
-   Section Fade-in Animation
-   ========================================================= */
-.bd-fade {
-    opacity  : 0;
-    animation: bdFadeIn 1s ease-in-out forwards;
+/* WRAPPER */
+.wq-bd-wrapper {
+    width          : 100%;
+    background     : #0f0f0f;
+    padding        : 2rem 0;
+    /* Minimal top-bottom */
+    color          : #fff;
+    display        : flex;
+    justify-content: center;
 }
 
-@keyframes bdFadeIn {
+/* CONTAINER */
+.wq-bd-container {
+    width    : 90%;
+    max-width: 1200px;
+}
+
+/* HEADER */
+.wq-bd-header {
+    text-align: center;
+    padding   : 0;
+    /* No extra margins */
+}
+
+.wq-bd-tagline {
+    font-size     : 1.5rem;
+    color         : #bbbbbb;
+    letter-spacing: 1px;
+    margin-bottom : 0.3rem;
+}
+
+.wq-bd-title {
+    font-size  : 1.8rem;
+    font-weight: 700;
+}
+
+/* GRID */
+.wq-bd-grid {
+    margin-top           : 1.5rem;
+    /* Very small spacing */
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap                  : 1rem;
+    /* Tight gap */
+}
+
+/* CARD */
+.wq-bd-card {
+    background   : #111;
+    border       : 1px solid #222;
+    padding      : 1.5rem;
+    /* compact */
+    text-align   : center;
+    border-radius: 10px;
+    transition   : 0.35s ease;
+}
+
+.wq-bd-card:hover {
+    border-color: #555;
+    transform   : translateY(-4px);
+}
+
+/* ICON BOX */
+.wq-bd-icon-box {
+    width          : 65px;
+    height         : 65px;
+    margin         : 0 auto 0.8rem auto;
+    border-radius  : 50%;
+    background     : #1a1a1a;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    /* 🔥 Circular float animation */
+    animation: wq-rotate 3.8s linear infinite;
+}
+
+@keyframes wq-rotate {
     0% {
-        opacity  : 0;
-        transform: translateY(25px);
+        transform: rotate(0deg);
     }
 
     100% {
-        opacity  : 1;
-        transform: translateY(0);
+        transform: rotate(360deg);
     }
 }
 
-/* =========================================================
-   Text Fade-in Animation
-   ========================================================= */
-.bd-text {
-    opacity  : 0;
-    animation: bdTextFade 1.3s ease forwards;
+.wq-bd-icon {
+    width    : 32px;
+    height   : 32px;
+    color    : #3aa9ff;
+    animation: wq-pulse 2.4s ease-in-out infinite;
 }
 
-@keyframes bdTextFade {
+/* 🔥 Smooth breathing icon animation */
+@keyframes wq-pulse {
     0% {
-        opacity  : 0;
-        transform: translateY(12px);
-    }
-
-    100% {
-        opacity  : 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================================================
-   Card Smooth Hover + Lift Effect
-   ========================================================= */
-.bd-card {
-    transition: all 0.35s ease;
-}
-
-.bd-card:hover {
-    transform   : translateY(-8px);
-    border-color: rgba(200, 200, 200, 0.45);
-    box-shadow  : 0 12px 28px rgba(0, 0, 0, 0.45);
-}
-
-/* =========================================================
-   Floating Icon Animation
-   ========================================================= */
-.bd-icon {
-    animation: bdFloat 3s ease-in-out infinite;
-}
-
-@keyframes bdFloat {
-    0% {
-        transform: translateY(0px);
+        transform: scale(1);
+        opacity  : 0.85;
     }
 
     50% {
-        transform: translateY(-7px);
+        transform: scale(1.14);
+        opacity  : 1;
     }
 
     100% {
-        transform: translateY(0px);
+        transform: scale(1);
+        opacity  : 0.85;
     }
 }
 
-/* =========================================================
-   Card Inner Text Smooth Transition
-   ========================================================= */
-.bd-card p,
-.bd-card h3 {
-    transition: color 0.3s ease;
+/* TEXT */
+.wq-bd-card-title {
+    font-size  : 1.1rem;
+    font-weight: 600;
 }
 
-.bd-card:hover p {
-    color: #d1d1d1 !important;
+.wq-bd-card-text {
+    font-size  : 0.9rem;
+    opacity    : 0.85;
+    margin-top : 0.3rem;
+    line-height: 1.4rem;
 }
 
-.bd-card:hover h3 {
-    color: #ffffff !important;
-}
-
-/* =========================================================
-   Responsive Adjustments
-   ========================================================= */
-@media (max-width: 768px) {
-    .bd-card {
-        padding: 22px !important;
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .wq-bd-title {
+        font-size: 1.6rem;
     }
 
-    .bd-card:hover {
-        transform: translateY(-3px);
+    .wq-bd-card {
+        padding: 1.2rem;
     }
-}
 
-@media (max-width: 480px) {
-    .bd-card {
-        padding: 20px !important;
+    .wq-bd-icon-box {
+        width : 55px;
+        height: 55px;
     }
 }

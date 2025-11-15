@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Gallery.css";
+import o1 from "../../assets/images/gallery/office1.webp";
+import o2 from "../../assets/images/gallery/office2.jpg";
+import o3 from "../../assets/images/gallery/office3.avif";
+import o4 from "../../assets/images/gallery/office4.jpg";
+import o5 from "../../assets/images/gallery/office5.jpg";
+import o6 from "../../assets/images/gallery/office6.jpg";
+import o7 from "../../assets/images/gallery/office7.jpg";
+import o8 from "../../assets/images/gallery/office8.jpg";
+import o9 from "../../assets/images/gallery/office9.jpg";
 
 export default function Gallery() {
   const [popup, setPopup] = useState(null);
 
-  const images = [
-    "/gallery/img1.jpg",
-    "/gallery/img2.jpg",
-    "/gallery/img3.jpg",
-    "/gallery/img4.jpg",
-    "/gallery/img5.jpg",
-    "/gallery/img6.jpg",
-    "/gallery/img7.jpg",
-    "/gallery/img8.jpg",
-    "/gallery/img9.jpg",
-  ];
+  const images = [o1, o2, o3, o4, o5, o6, o7, o8, o9];
 
   return (
     <>

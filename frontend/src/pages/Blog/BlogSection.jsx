@@ -1,32 +1,45 @@
 import React from "react";
 import "./Blog.css";
 
+// Import Local Images
+import blog1 from "../../assets/images/blog/blog1.jpg";
+import blog2 from "../../assets/images/blog/blog2.png";
+import blog3 from "../../assets/images/blog/blog3.jpg";
+import blog4 from "../../assets/images/blog/blog4.jpg";
+import blog5 from "../../assets/images/blog/blog5.webp";
+import blog6 from "../../assets/images/blog/blog6.jpg";
+
 export default function BlogSection() {
   const blogs = [
     {
       id: 1,
       title: "Top 5 IT Trends Transforming Businesses in 2024",
-      img: "https://images.unsplash.com/photo-1551434678-e076c223a692",
+      img: blog1,
     },
     {
       id: 2,
-      title: "How We Helped XYZ Automate Their Operations with AI — Case Study",
-      img: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+      title: "How WisdomQuantums Built a Scalable AI Solution — Case Study",
+      img: blog2,
     },
     {
       id: 3,
-      title: "Cybersecurity Essentials Every Business Must Know",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+      title: "Cybersecurity Essentials Every Modern Business Must Know",
+      img: blog3,
     },
     {
       id: 4,
-      title: "Cloud Computing: The Backbone of Modern Enterprises",
-      img: "https://images.unsplash.com/photo-1556155092-8707de31f9c4",
+      title: "Cloud Computing: Powering the Digital Enterprise",
+      img: blog4,
     },
     {
       id: 5,
-      title: "Latest Tech Innovations Shaping 2024",
-      img: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51",
+      title: "Tech Innovations Revolutionizing 2024",
+      img: blog5,
+    },
+    {
+      id: 6,
+      title: "Why Digital Transformation Is No Longer Optional",
+      img: blog6,
     },
   ];
 

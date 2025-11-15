@@ -1,4 +1,6 @@
-/* SECTION */
+/* ============================
+   SECTION WRAPPER
+============================ */
 .its-section {
     width     : 100%;
     background: #080808;
@@ -11,16 +13,18 @@
     margin   : auto;
 }
 
-/* HEADINGS */
+/* ============================
+   HEADINGS
+============================ */
 .its-subtitle {
-    font-size     : 1.1rem;
+    font-size     : 1.5rem;
     letter-spacing: 0.35rem;
     color         : #bbb;
 }
 
 .its-title {
     margin-top     : 0.4rem;
-    font-size      : 2.2rem;
+    font-size      : 1.8rem;
     font-weight    : 700;
     padding        : 0.6rem 1rem;
     display        : inline-block;
@@ -37,17 +41,39 @@
     width      : 60%;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
     .its-description {
-        width: 100%;
+        width     : 100%;
+        text-align: left;
     }
 }
 
-/* SCROLL ROW */
+/* Mobile */
+@media (max-width: 600px) {
+    .its-title {
+        font-size: 1.7rem;
+        padding  : 0.5rem 0.8rem;
+    }
+
+    .its-subtitle {
+        font-size     : 0.85rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .its-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================
+   SCROLL ROW
+============================ */
 .its-scroll-wrapper {
-    margin-top     : 2.5rem;
-    overflow-x     : auto;
-    scrollbar-width: none;
+    margin-top                : 2.4rem;
+    overflow-x                : auto;
+    scrollbar-width           : none;
+    -webkit-overflow-scrolling: touch;
 }
 
 .its-scroll-wrapper::-webkit-scrollbar {
@@ -60,7 +86,9 @@
     width  : max-content;
 }
 
-/* CARD */
+/* ============================
+   CARD
+============================ */
 .its-card {
     position       : relative;
     width          : 260px;
@@ -71,7 +99,15 @@
     transform-style: preserve-3d;
 }
 
-/* GLOW BEHIND IMAGE */
+/* Mobile Card Resize */
+@media (max-width: 600px) {
+    .its-card {
+        width : 200px;
+        height: 290px;
+    }
+}
+
+/* Glow Border */
 .card-border-glow {
     position     : absolute;
     inset        : -2px;
@@ -79,7 +115,6 @@
     background   : linear-gradient(135deg, #00e0ff, #0077ff, #5a00ff, #ff009d);
     animation    : glowAnim 6s linear infinite;
     z-index      : 1;
-    /* behind */
     filter       : blur(8px);
 }
 
@@ -97,7 +132,7 @@
     }
 }
 
-/* IMAGE */
+/* Image */
 .its-img {
     width        : 100%;
     height       : 100%;
@@ -112,7 +147,7 @@
     transform: scale(1.15);
 }
 
-/* OVERLAY ABOVE IMAGE */
+/* Overlay */
 .its-overlay {
     position  : absolute;
     inset     : 0;
@@ -120,7 +155,7 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
 }
 
-/* TITLE (TOP) */
+/* Title on Card */
 .its-card-title {
     position   : absolute;
     top        : 14px;
@@ -131,12 +166,25 @@
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* TILT 3D EFFECT */
+/* Mobile Title Adjustment */
+@media (max-width: 600px) {
+    .its-card-title {
+        font-size: 0.95rem;
+        left     : 12px;
+        top      : 10px;
+    }
+}
+
+/* ============================
+   3D Tilt Effect
+============================ */
 .tilt:hover {
     transform: rotateY(8deg) rotateX(6deg) scale(1.05);
 }
 
-/* DOTS */
+/* ============================
+   DOTS INDICATOR
+============================ */
 .its-dots {
     display        : flex;
     justify-content: center;
@@ -151,7 +199,17 @@
     border-radius: 50%;
 }
 
-/* ANIMATIONS */
+/* Mobile Dots Size */
+@media (max-width: 600px) {
+    .its-dots span {
+        width : 7px;
+        height: 7px;
+    }
+}
+
+/* ============================
+   ANIMATIONS
+============================ */
 .animate-fade {
     opacity  : 0;
     animation: fadeUp 1s ease forwards;

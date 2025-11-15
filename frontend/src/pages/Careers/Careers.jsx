@@ -74,6 +74,60 @@ const Careers = () => {
             <FiArrowRight />
           </div>
         </div>
+
+        <div className="career-job-card">
+          <div>
+            <h3 className="job-title">Full Stack Developer</h3>
+            <p className="job-sub">MERN with TS/NEST/NEXT</p>
+
+            <p className="job-info">
+              <FiClock /> Full time
+            </p>
+            <p className="job-info">
+              <FiMapPin /> Pune
+            </p>
+          </div>
+
+          <div className="job-arrow">
+            <FiArrowRight />
+          </div>
+        </div>
+
+        <div className="career-job-card">
+          <div>
+            <h3 className="job-title">Software developer</h3>
+            <p className="job-sub">Assistant Developer</p>
+
+            <p className="job-info">
+              <FiClock /> Full time
+            </p>
+            <p className="job-info">
+              <FiMapPin /> Pune
+            </p>
+          </div>
+
+          <div className="job-arrow">
+            <FiArrowRight />
+          </div>
+        </div>
+
+        <div className="career-job-card">
+          <div>
+            <h3 className="job-title">UI/UX Developer</h3>
+            <p className="job-sub">Canve, XD, etc</p>
+
+            <p className="job-info">
+              <FiClock /> Full time
+            </p>
+            <p className="job-info">
+              <FiMapPin /> Pune
+            </p>
+          </div>
+
+          <div className="job-arrow">
+            <FiArrowRight />
+          </div>
+        </div>
       </section>
 
       {/* ================= CONTACT FORM SECTION ================= */}

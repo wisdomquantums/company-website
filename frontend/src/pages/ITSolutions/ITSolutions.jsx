@@ -1,19 +1,24 @@
 import { useEffect, useRef } from "react";
 import "./ITSolutions.css";
+import appdevelopment from "../../assets/images/home/mobileapp1.png";
+import websitedevelopment from "../../assets/images/home/websitedevelopment.avif";
+import digitalmarketing from "../../assets/images/home/digitalmarketing1.jpg";
+import uiux from "../../assets/images/home/uiux.jpg";
+import softwaredevelopment from "../../assets/images/home/softwaredevelop.jpg";
 
 export default function ITSolutions() {
   const scrollRef = useRef(null);
   const intervalRef = useRef(null);
 
   const services = [
-    { title: "Website Development", img: "/images/webdev.jpg" },
-    { title: "App Development", img: "/images/appdev.jpg" },
+    { title: "Website Development", img: websitedevelopment },
+    { title: "App Development", img: appdevelopment },
     {
       title: "Digital Marketing",
-      img: "../../assets/images/home/carousel1.jpg",
+      img: digitalmarketing,
     },
-    { title: "UI/UX Design", img: "/images/uiux.jpg" },
-    { title: "Software Development", img: "/images/software.jpg" },
+    { title: "UI/UX Design", img: uiux },
+    { title: "Software Development", img: softwaredevelopment },
   ];
 
   /* AUTO SCROLL */
@@ -45,16 +50,17 @@ export default function ITSolutions() {
   return (
     <section className="its-section">
       <div className="its-container">
-        <p className="its-subtitle animate-fade">Tailored IT Solutions</p>
+        <p className="its-subtitle animate-fade">Smart IT Services</p>
 
         <h2 className="its-title animate-fade">
-          Crafting Tailored IT Solutions for your Business
+          Innovative IT Solutions Designed for Growth
         </h2>
 
         <p className="its-description animate-fade">
-          At Avers, we deliver customized IT solutions tailored to your business
-          needs. Using modern technology, we help you streamline operations and
-          scale efficiently.
+          WisdomQuantums delivers powerful, scalable, and future-ready IT
+          solutions tailored to your business goals. Our expert team leverages
+          modern technology to streamline operations, enhance user experience,
+          and accelerate your digital transformation journey.
         </p>
 
         <div
@@ -68,7 +74,7 @@ export default function ITSolutions() {
               <div key={idx} className="its-card tilt">
                 <div className="card-border-glow"></div>
 
-                <img src={item.img} className="its-img" />
+                <img src={item.img} className="its-img" alt={item.title} />
 
                 <div className="its-overlay"></div>
 

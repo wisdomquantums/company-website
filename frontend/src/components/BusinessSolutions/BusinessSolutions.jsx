@@ -2,7 +2,7 @@ import React from "react";
 import "./BusinessSolutions.css";
 
 import mainImg from "@/assets/images/solutions/main.jpg";
-import smallImg from "@/assets/images/solutions/small.png";
+import smallImg from "@/assets/images/solutions/small.jpg";
 
 export default function BusinessSolutions() {
   return (
@@ -23,7 +23,7 @@ export default function BusinessSolutions() {
           <div className="bs-content slide-up">
             <h4 className="bs-subtitle neon-text">Driven by Smart Solutions</h4>
 
-            <h2 className="bs-title glass-title">
+            <h2 className="bs-title glass-title text-light">
               Innovating Business Solutions
             </h2>
 

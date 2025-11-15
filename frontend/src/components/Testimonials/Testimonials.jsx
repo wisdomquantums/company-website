@@ -3,47 +3,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Testimonials.css";
 
 export default function Testimonials() {
-  // === 6 Testimonials ===
+  // === 6 Updated Testimonials ===
   const testimonials = [
     {
       quote:
-        "WisdomQuantum transformed our business processes with their innovative solutions. Highly recommended!",
-      name: "Aditya Jagtap",
+        "WisdomQuantums delivered a seamless digital transformation for our company. Their expertise and execution exceeded expectations.",
+      name: "Vikash Tiwari",
       role: "Software Developer",
       img: "https://i.pravatar.cc/100?img=1",
     },
     {
       quote:
-        "Working with WisdomQuantum has been a game changer for our business. Outstanding support!",
-      name: "Paresh Shinde",
+        "The team at WisdomQuantums helped us build reliable systems with outstanding support. Truly a valuable tech partner.",
+      name: "Sachin Kumar",
       role: "Civil Engineer",
       img: "https://i.pravatar.cc/100?img=2",
     },
     {
       quote:
-        "We partnered with WisdomQuantum for cloud migration — seamless and stress-free!",
-      name: "Vicky Sharma",
+        "Their cloud migration service was quick, secure, and efficient. Zero downtime and excellent communication throughout.",
+      name: "Nehal Sharma",
       role: "Data Analyst",
       img: "https://i.pravatar.cc/100?img=3",
     },
     {
       quote:
-        "Their cybersecurity & IT services have kept our systems secure and up-to-date.",
+        "We rely on WisdomQuantums for cybersecurity and IT support. Their proactive approach keeps our systems stable and protected.",
       name: "Mayank Patil",
       role: "COO, Secure Enterprises",
       img: "https://i.pravatar.cc/100?img=4",
     },
     {
       quote:
-        "The WisdomQuantum team delivers quality, precision, and exceptional communication.",
-      name: "Rohit Verma",
+        "Exceptional quality and precision. Their team understands requirements deeply and delivers solutions that scale effortlessly.",
+      name: "Maya Verma",
       role: "Product Manager",
       img: "https://i.pravatar.cc/100?img=5",
     },
     {
       quote:
-        "Their software automation solutions boosted our efficiency by 3x!",
-      name: "Sneha Kulkarni",
+        "Our automation workflow improved drastically — 3x faster output! WisdomQuantums is the best tech partner we’ve worked with.",
+      name: "Raj Kulkarni",
       role: "IT Consultant",
       img: "https://i.pravatar.cc/100?img=6",
     },
@@ -71,7 +71,9 @@ export default function Testimonials() {
       {/* Heading */}
       <div className="testimonials-header">
         <h2 className="testimonials-title">What Our Clients Say About Us</h2>
-        <h3 className="testimonials-subtitle">Real Stories. Proven Success.</h3>
+        <h3 className="testimonials-subtitle">
+          Trusted Partners. Real Results.
+        </h3>
       </div>
 
       {/* Slider */}

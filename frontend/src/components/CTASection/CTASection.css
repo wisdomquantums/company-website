@@ -1,15 +1,26 @@
-/* ROOT SECTION */
+/* ============================================================
+   ROOT SECTION
+============================================================ */
 .cta-root {
-    width          : 100%;
-    padding        : 4rem 1rem;
-    background     : #181818;
-    color          : white;
+    width     : 100%;
+    padding   : 4rem 1rem;
+    background: #181818;
+    color     : white;
+
     display        : flex;
     justify-content: center;
     align-items    : center;
 }
 
-/* CONTAINER */
+@media (max-width: 480px) {
+    .cta-root {
+        padding: 3rem 1rem;
+    }
+}
+
+/* ============================================================
+   CONTAINER
+============================================================ */
 .cta-container {
     width    : 100%;
     max-width: 1400px;
@@ -18,54 +29,82 @@
     justify-content: space-between;
     align-items    : center;
     gap            : 2rem;
-
-    flex-wrap: wrap;
+    flex-wrap      : wrap;
 
     animation: fadeIn 1.2s ease;
 }
 
-/* HEADING */
+/* Force proper stacking on small screens */
+@media (max-width: 950px) {
+    .cta-container {
+        flex-direction: column;
+        text-align    : center;
+    }
+}
+
+/* ============================================================
+   LEFT HEADING
+============================================================ */
 .cta-title {
     flex       : 1.1;
-    font-size  : clamp(1.8rem, 4vw, 3rem);
+    font-size  : clamp(1.7rem, 4vw, 3rem);
     font-weight: 700;
-    line-height: 1.2;
-    color      : white;
+    line-height: 1.25;
 
     background   : rgba(0, 0, 0, 0.35);
-    padding      : 0.8rem 1.2rem;
+    padding      : 1rem 1.3rem;
     border-radius: 8px;
 }
 
-/* 3-color highlighted words */
+/* Color highlights */
 .highlight-orange {
     color: #f97316;
-    /* orange */
 }
 
 .highlight-blue {
     color: #60a5fa;
-    /* modern blue */
 }
 
 .highlight-pink {
     color: #ec4899;
-    /* optional if needed */
 }
 
-/* RIGHT TEXT AREA */
+/* Extra small screens */
+@media (max-width: 480px) {
+    .cta-title {
+        padding    : 0.8rem 1rem;
+        font-size  : 1.6rem;
+        line-height: 1.35;
+    }
+}
+
+/* ============================================================
+   RIGHT SIDE TEXT + BUTTON
+============================================================ */
 .cta-right {
     flex      : 1;
     text-align: right;
 }
 
-/* SUBTEXT */
+/* Align center on mobile */
+@media (max-width: 950px) {
+    .cta-right {
+        text-align: center;
+    }
+}
+
 .cta-subtext {
     font-size    : 0.95rem;
     color        : #d1d5db;
-    line-height  : 1.5;
+    line-height  : 1.55;
     margin-bottom: 1rem;
     font-style   : italic;
+}
+
+@media (max-width: 480px) {
+    .cta-subtext {
+        font-size: 0.88rem;
+    }
 }
 
 /* CTA BUTTON */
@@ -74,11 +113,11 @@
     color        : white;
     padding      : 0.6rem 1.4rem;
     border-radius: 6px;
-    font-size    : 0.9rem;
+    font-size    : 0.95rem;
     font-weight  : 500;
     border       : 1px solid white;
-
-    transition: 0.3s ease;
+    transition   : 0.3s ease;
+    display      : inline-block;
 }
 
 .cta-btn:hover {
@@ -88,28 +127,17 @@
     color       : #60a5fa;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .cta-container {
-        text-align: center;
-    }
-
-    .cta-right {
-        text-align: center;
-    }
-
-    .cta-title {
-        padding: 0.8rem;
-    }
-}
-
+/* Bigger touch target for mobile */
 @media (max-width: 600px) {
-    .cta-title {
-        font-size: 1.7rem;
+    .cta-btn {
+        padding  : 0.75rem 1.6rem;
+        font-size: 1rem;
     }
 }
 
-/* ANIMATION */
+/* ============================================================
+   ANIMATION
+============================================================ */
 @keyframes fadeIn {
     from {
         opacity  : 0;

@@ -8,9 +8,11 @@
     backdrop-filter: blur(10px);
     display        : flex;
     justify-content: center;
-    align-items    : center;
+    align-items    : flex-start;
     padding        : 2rem;
     z-index        : 999;
+    overflow-y     : auto;
+    overflow-x     : hidden;
 }
 
 /* Floating Glow Lights */
@@ -50,6 +52,9 @@
     color          : #fff;
     position       : relative;
     box-shadow     : 0 22px 50px rgba(0, 0, 0, 0.6);
+    margin-top     : 2rem;
+    max-height     : calc(100vh - 4rem);
+    overflow-y     : auto;
 }
 
 /* ==========================================================
@@ -121,13 +126,12 @@
     transition   : 0.25s ease;
 }
 
-/* Placeholder more visible */
 .inq-field input::placeholder,
 .inq-field textarea::placeholder {
     color: rgba(255, 255, 255, 0.55);
 }
 
-/* Active focus */
+/* Focus effect */
 .inq-field input:focus,
 .inq-field select:focus,
 .inq-field textarea:focus {
@@ -136,25 +140,19 @@
     box-shadow  : 0 0 10px rgba(0, 255, 231, 0.25);
 }
 
-/* ==========================================================
-   SELECT DROPDOWN FIX (TEXT + BG VISIBLE)
-========================================================== */
+/* Select styling */
 .inq-field select {
     color     : #fff !important;
     background: rgba(0, 0, 0, 0.55) !important;
 }
 
-/* Dropdown Options */
 .inq-field select option {
     background: #101010 !important;
     color     : #fff !important;
     padding   : 8px;
-    font-size : 0.95rem;
 }
 
-/* ==========================================================
-   TEXTAREA
-========================================================== */
+/* Textarea */
 .inq-field textarea {
     resize: none;
     height: 90px;
@@ -187,8 +185,15 @@
    RESPONSIVE
 ========================================================== */
 @media (max-width: 520px) {
+    .inq-overlay {
+        padding    : 1.2rem;
+        align-items: flex-start;
+    }
+
     .inq-box {
-        padding: 1.6rem;
+        padding   : 1.6rem;
+        margin-top: 1.2rem;
+        max-height: calc(100vh - 2rem);
     }
 
     .inq-grid-2 {
@@ -197,5 +202,11 @@
 
     .inq-heading {
         font-size: 1.6rem;
+    }
+
+    .inq-glow {
+        width : 170px;
+        height: 170px;
+        filter: blur(60px);
     }
 }

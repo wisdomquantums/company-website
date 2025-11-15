@@ -1,4 +1,6 @@
-/* SECTION */
+/* ============================
+   SECTION
+============================ */
 .vm-section {
     width          : 100%;
     background     : #0b0b0b;
@@ -22,7 +24,9 @@
     }
 }
 
-/* LEFT SIDE */
+/* ============================
+   LEFT SIDE
+============================ */
 .vm-left {
     color         : white;
     display       : flex;
@@ -31,11 +35,12 @@
 }
 
 .vm-title {
-    font-size    : 2rem;
+    font-size    : 1.8rem;
     font-weight  : 700;
     padding      : 0.45rem 1rem;
     background   : rgba(255, 255, 255, 0.08);
     border-radius: 10px;
+    display      : inline-block;
 }
 
 .vm-subtext {
@@ -65,7 +70,9 @@
     transform : translateY(-3px);
 }
 
-/* BIGGER CIRCLE */
+/* ============================
+   RIGHT SIDE — CIRCLE
+============================ */
 .vm-right {
     display        : flex;
     justify-content: center;
@@ -73,9 +80,7 @@
 
 .vm-circle {
     width        : 460px;
-    /* BIGGER CIRCLE */
     height       : 460px;
-    /* BIGGER CIRCLE */
     border-radius: 50%;
     background   : #111;
     border       : 1px solid #222;
@@ -88,27 +93,32 @@
     transform: scale(1.02);
 }
 
-/* CROSS LINES */
+/* ============================
+   CROSS LINES
+============================ */
 .vm-cross-vertical,
 .vm-cross-horizontal {
     background: rgba(255, 255, 255, 0.07);
+    position  : absolute;
 }
 
 .vm-cross-vertical {
-    width   : 1px;
-    height  : 100%;
-    position: absolute;
-    left    : 50%;
+    width    : 1px;
+    height   : 100%;
+    left     : 50%;
+    transform: translateX(-50%);
 }
 
 .vm-cross-horizontal {
-    height  : 1px;
-    width   : 100%;
-    position: absolute;
-    top     : 50%;
+    height   : 1px;
+    width    : 100%;
+    top      : 50%;
+    transform: translateY(-50%);
 }
 
-/* QUADRANTS */
+/* ============================
+   QUADRANTS
+============================ */
 .vm-q {
     position       : absolute;
     width          : 50%;
@@ -118,7 +128,6 @@
     align-items    : center;
 }
 
-/* ICON BG DARK, TEXT BG LIGHTER */
 .icon-bg {
     background: #0a0a0a;
 }
@@ -147,7 +156,9 @@
     right : 0;
 }
 
-/* CONTENT INSIDE QUADRANTS */
+/* ============================
+   QUADRANT INNER CONTENT
+============================ */
 .vm-q-inner {
     padding: 0.7rem;
     width  : 100%;
@@ -166,16 +177,41 @@
     gap            : 0.4rem;
 }
 
+/* ============================
+   CURVED BACKGROUND FOR TEXT
+============================ */
+.vm-q-inner.text-only {
+    position     : relative;
+    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+    padding      : 1rem 1.3rem;
+    overflow     : hidden;
+}
+
+.vm-q-inner.text-only::before {
+    content      : "";
+    position     : absolute;
+    inset        : 0;
+    background   : #1c1c1c;
+    opacity      : 0.85;
+    border-radius: inherit;
+    z-index      : -1;
+    box-shadow   : 0 0 12px rgba(255, 255, 255, 0.04);
+}
+
+/* Text alignment */
 .text-right-align {
     text-align   : right;
     padding-right: 1rem;
 }
 
-.text-center-align {
-    text-align: center;
+.text-left-align {
+    text-align  : left;
+    padding-left: 1rem;
 }
 
-/* TEXT STYLES */
+/* ============================
+   TEXT STYLES
+============================ */
 .vm-heading {
     font-size  : 1rem;
     font-weight: 700;
@@ -183,12 +219,14 @@
 }
 
 .vm-text {
-    font-size  : 0.82rem;
+    font-size  : 0.8rem;
     color      : #d2d2d2;
-    line-height: 1.45;
+    line-height: 1.55;
 }
 
-/* ICONS SAME SIZE */
+/* ============================
+   ICONS
+============================ */
 .vm-icon {
     width    : 60px;
     height   : 60px;
@@ -217,7 +255,9 @@
     }
 }
 
-/* ANIMATIONS */
+/* ============================
+   ANIMATIONS
+============================ */
 .animate-fade-up {
     opacity  : 0;
     animation: fadeUp 1s ease forwards;
@@ -235,10 +275,319 @@
     }
 }
 
-/* RESPONSIVE */
+/* ============================
+   RESPONSIVE
+============================ */
 @media (max-width: 600px) {
     .vm-circle {
         width : 360px;
         height: 360px;
     }
+
+    /* ============================
+   SECTION WRAPPER
+============================ */
+    .vm-section {
+        width          : 100%;
+        background     : #0b0b0b;
+        padding        : 4rem 1.2rem;
+        display        : flex;
+        justify-content: center;
+    }
+
+    /* ============================
+   GRID CONTAINER
+============================ */
+    .vm-container {
+        max-width            : 1320px;
+        display              : grid;
+        grid-template-columns: 1fr 1fr;
+        gap                  : 3rem;
+        align-items          : center;
+    }
+
+    /* Tablet & below */
+    @media (max-width: 1024px) {
+        .vm-container {
+            grid-template-columns: 1fr;
+            text-align           : center;
+            gap                  : 2.5rem;
+        }
+    }
+
+    /* ============================
+   LEFT SIDE TEXT
+============================ */
+    .vm-left {
+        color         : white;
+        display       : flex;
+        flex-direction: column;
+        gap           : 1rem;
+    }
+
+    .vm-title {
+        font-size    : 1.8rem;
+        font-weight  : 700;
+        padding      : 0.45rem 1rem;
+        background   : rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        display      : inline-block;
+    }
+
+    .vm-subtext {
+        font-size : 1rem;
+        color     : #dadada;
+        font-style: italic;
+    }
+
+    .vm-desc {
+        font-size  : 0.92rem;
+        color      : #c0c0c0;
+        line-height: 1.7;
+    }
+
+    .vm-btn {
+        padding      : 0.65rem 1.6rem;
+        background   : #111;
+        border       : 1px solid #444;
+        color        : #eee;
+        border-radius: 6px;
+        transition   : 0.3s ease;
+        width        : fit-content;
+    }
+
+    .vm-btn:hover {
+        background: #1a1a1a;
+        transform : translateY(-3px);
+    }
+
+    /* Center button for mobile */
+    @media (max-width: 1024px) {
+        .vm-btn {
+            margin: 0 auto;
+        }
+    }
+
+    /* ============================
+   RIGHT SIDE CIRCLE
+============================ */
+    .vm-right {
+        display        : flex;
+        justify-content: center;
+    }
+
+    /* Circle Auto-scales based on screen size */
+    .vm-circle {
+        width        : min(460px, 80vw);
+        height       : min(460px, 80vw);
+        border-radius: 50%;
+        background   : #111;
+        border       : 1px solid #222;
+        position     : relative;
+        overflow     : hidden;
+        transition   : 0.3s ease;
+    }
+
+    .vm-circle:hover {
+        transform: scale(1.02);
+    }
+
+    /* ============================
+   CROSS LINES
+============================ */
+    .vm-cross-vertical,
+    .vm-cross-horizontal {
+        background: rgba(255, 255, 255, 0.07);
+        position  : absolute;
+    }
+
+    .vm-cross-vertical {
+        width    : 1px;
+        height   : 100%;
+        left     : 50%;
+        transform: translateX(-50%);
+    }
+
+    .vm-cross-horizontal {
+        height   : 1px;
+        width    : 100%;
+        top      : 50%;
+        transform: translateY(-50%);
+    }
+
+    /* ============================
+   QUADRANTS
+============================ */
+    .vm-q {
+        position       : absolute;
+        width          : 50%;
+        height         : 50%;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    /* Quadrant positions */
+    .vm-q1 {
+        top : 0;
+        left: 0;
+    }
+
+    .vm-q2 {
+        top  : 0;
+        right: 0;
+    }
+
+    .vm-q3 {
+        bottom: 0;
+        left  : 0;
+    }
+
+    .vm-q4 {
+        bottom: 0;
+        right : 0;
+    }
+
+    .icon-bg {
+        background: #0a0a0a;
+    }
+
+    .text-bg {
+        background: #161616;
+    }
+
+    /* ============================
+   QUADRANT INNER
+============================ */
+    .vm-q-inner {
+        padding: 0.7rem;
+        width  : 100%;
+        height : 100%;
+        display: flex;
+    }
+
+    .icon-only {
+        justify-content: center;
+        align-items    : center;
+    }
+
+    .text-only {
+        flex-direction : column;
+        justify-content: center;
+        gap            : 0.4rem;
+    }
+
+    /* Curved text bg */
+    .vm-q-inner.text-only {
+        position     : relative;
+        border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+        padding      : 1rem 1.3rem;
+        overflow     : hidden;
+    }
+
+    .vm-q-inner.text-only::before {
+        content      : "";
+        position     : absolute;
+        inset        : 0;
+        background   : #1c1c1c;
+        opacity      : 0.85;
+        border-radius: inherit;
+        z-index      : -1;
+    }
+
+    /* Text alignment */
+    .text-right-align {
+        text-align   : right;
+        padding-right: 1rem;
+    }
+
+    .text-left-align {
+        text-align  : left;
+        padding-left: 1rem;
+    }
+
+    /* ============================
+   TEXT STYLES
+============================ */
+    .vm-heading {
+        font-size  : clamp(0.85rem, 2vw, 1rem);
+        font-weight: 700;
+        color      : #fff;
+    }
+
+    .vm-text {
+        font-size  : clamp(0.7rem, 1.8vw, 0.85rem);
+        color      : #d2d2d2;
+        line-height: 1.55;
+    }
+
+    /* ============================
+   ICONS
+============================ */
+    .vm-icon {
+        width    : clamp(40px, 9vw, 60px);
+        height   : clamp(40px, 9vw, 60px);
+        animation: floatIcon 3s infinite ease-in-out;
+    }
+
+    .icon-yellow {
+        color: #ffcc33;
+    }
+
+    .icon-blue {
+        color: #3aa0ff;
+    }
+
+    @keyframes floatIcon {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* ============================
+   ENTRANCE ANIMATION
+============================ */
+    .animate-fade-up {
+        opacity  : 0;
+        animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity  : 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity  : 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ============================
+   EXTRA MOBILE RESPONSIVE
+============================ */
+    @media (max-width: 600px) {
+        .vm-circle {
+            width : 320px;
+            height: 320px;
+        }
+
+        .vm-section {
+            padding: 3rem 1rem;
+        }
+
+        .vm-title {
+            font-size: 1.5rem;
+        }
+    }
+
 }

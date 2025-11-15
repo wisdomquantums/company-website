@@ -9,7 +9,7 @@ import carousel3 from "@/assets/images/home/carousel3.jpg";
 
 export default function Hero({
   ctaText = "Explore Services",
-  ctaLink = "/services",
+  ctaLink = "/it-solutions",
 }) {
   const images = [carousel1, carousel2, carousel3];
   const [currentImage, setCurrentImage] = useState(0);
@@ -25,8 +25,9 @@ export default function Hero({
         "A software & IT solutions company crafting web, app, and digital services for the modern world.",
     },
     {
-      title: "We Don’t Just Develop — We Redefine Digital",
-      subtitle: "Transforming businesses through next-gen innovation.",
+      title: "Building the Future of Digital Innovation",
+      subtitle:
+        "Delivering smart, scalable, and impactful technology solutions.",
     },
   ];
 
@@ -83,7 +84,7 @@ export default function Hero({
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="hero-title">{quotes[currentQuote].title}</h1>
+              <h2 className="hero-title">{quotes[currentQuote].title}</h2>
               <div className="hero-line"></div>
               <p className="hero-subtitle">{quotes[currentQuote].subtitle}</p>
             </motion.div>
@@ -114,7 +115,7 @@ export default function Hero({
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -123,7 +124,7 @@ export default function Hero({
       >
         <span>Scroll Down</span>
         <div className="scroll-line"></div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

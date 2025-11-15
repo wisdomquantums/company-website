@@ -37,7 +37,7 @@ export default function Footer() {
           contactInfo={{
             address: "Pune, Maharashtra, India",
             email: "wisdomquantumsolution@gmail.com",
-            phone: "+91 8208385551",
+            phone: "+91 8208385551 +91 7620691559",
           }}
         />
       </div>

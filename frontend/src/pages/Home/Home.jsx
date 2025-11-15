@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InquiryForm from "@/components/InquiryForm/InquiryForm";
-import Hero from "@/components/Hero/Hero";
+import Hero from "../../components/Hero/Hero";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import Blog from "../Blog/Blog";
 import CTASection from "../../components/CTASection/CTASection";
@@ -66,9 +66,7 @@ export default function Home() {
       </div>
 
       {/* INQUIRY FORM POPUP */}
-      <div className="w-full p-0 m-0">
-        <InquiryForm />
-      </div>
+      <div className="w-full p-0 m-0"> <InquiryForm /></div>
     </div>
   );
 }
