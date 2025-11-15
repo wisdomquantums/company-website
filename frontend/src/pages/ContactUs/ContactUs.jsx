@@ -17,7 +17,7 @@ export default function ContactUs() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/send-email`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/send-email`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -35,7 +35,7 @@ export default function ContactUs() {
       }
     } catch (error) {
       console.error("Email API Error:", error);
-      setMsg("Server error. Try again.");
+      setMsg("Server error. Please try again.");
     }
 
     setLoading(false);
@@ -43,9 +43,9 @@ export default function ContactUs() {
 
   return (
     <div className="contact-page">
-      {/* Contact + Form */}
+      {/* CONTAINER WRAPPER */}
       <div className="contact-container">
-        {/* LEFT SECTION */}
+        {/* LEFT SIDE */}
         <div className="contact-left">
           <h2 className="contact-heading">Get in Touch with Us</h2>
 
@@ -77,9 +77,10 @@ export default function ContactUs() {
           </div>
         </div>
 
-        {/* RIGHT SECTION — FORM */}
+        {/* RIGHT SIDE FORM */}
         <div className="contact-form-box">
           <h3 className="text-center contact-sub">Contact Us</h3>
+
           <form className="contact-form" ref={formRef} onSubmit={sendEmail}>
             <div className="form-row">
               <div className="form-field">

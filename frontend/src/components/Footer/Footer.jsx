@@ -36,7 +36,7 @@ export default function Footer() {
           type="contact"
           contactInfo={{
             address: "Pune, Maharashtra, India",
-            email: "wisdomquantumsolution@gmail.com",
+            email: "info@wisdomquantums.com",
             phone: "+91 8208385551 +91 7620691559",
           }}
         />
@@ -46,8 +46,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <a href="/">
           <p>
-            © {new Date().getFullYear()} WisdomQuantum Solution Pvt. Ltd. — All
-            Rights Reserved.
+            © {new Date().getFullYear()} WisdomQuantum Solution — All Rights
+            Reserved.
           </p>
         </a>
       </div>

@@ -5,6 +5,9 @@ import "./InquiryForm.css";
 
 export default function InquiryForm() {
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState("");
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -23,11 +26,52 @@ export default function InquiryForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Inquiry Submitted:", form);
-    alert("Thank you! We will contact you shortly.");
-    setShowForm(false);
+    setLoading(true);
+    setMsg("");
+
+    const payload = {
+      first_name: form.firstName,
+      last_name: form.lastName,
+      email: form.email,
+      phone: form.contact,
+      service: form.service,
+      message: form.message,
+    };
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/send-email`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const json = await response.json();
+
+      if (json.success) {
+        setMsg("Thank you! Your inquiry has been sent.");
+        setShowForm(false);
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          contact: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setMsg("Failed to send inquiry. Try again.");
+      }
+    } catch (error) {
+      console.error("Inquiry Error:", error);
+      setMsg("Server error. Try again.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -39,7 +83,7 @@ export default function InquiryForm() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          {/* FLOATING GLOW LIGHTS */}
+          {/* FLOATING GLOW */}
           <div className="inq-glow glow-1" />
           <div className="inq-glow glow-2" />
 
@@ -63,11 +107,10 @@ export default function InquiryForm() {
                 <div className="inq-field">
                   <label>First Name*</label>
                   <input
-                    type="text"
                     name="firstName"
                     value={form.firstName}
-                    required
                     onChange={handleChange}
+                    required
                     placeholder="Enter first name"
                   />
                 </div>
@@ -75,11 +118,10 @@ export default function InquiryForm() {
                 <div className="inq-field">
                   <label>Last Name*</label>
                   <input
-                    type="text"
                     name="lastName"
                     value={form.lastName}
-                    required
                     onChange={handleChange}
+                    required
                     placeholder="Enter last name"
                   />
                 </div>
@@ -92,8 +134,8 @@ export default function InquiryForm() {
                     type="email"
                     name="email"
                     value={form.email}
-                    required
                     onChange={handleChange}
+                    required
                     placeholder="Enter email"
                   />
                 </div>
@@ -101,12 +143,11 @@ export default function InquiryForm() {
                 <div className="inq-field">
                   <label>Contact Number*</label>
                   <input
-                    type="text"
                     name="contact"
                     value={form.contact}
-                    required
                     onChange={handleChange}
-                    placeholder="Enter phone number"
+                    required
+                    placeholder="Enter phone"
                   />
                 </div>
               </div>
@@ -116,8 +157,8 @@ export default function InquiryForm() {
                 <select
                   name="service"
                   value={form.service}
-                  required
                   onChange={handleChange}
+                  required
                 >
                   <option value="">Select Service</option>
                   <option value="Web Development">Web Development</option>
@@ -133,16 +174,18 @@ export default function InquiryForm() {
                 <textarea
                   name="message"
                   value={form.message}
-                  required
                   onChange={handleChange}
+                  required
                   placeholder="Describe your requirement..."
                   rows="3"
                 />
               </div>
 
-              <button type="submit" className="inq-submit">
-                Submit Inquiry
+              <button className="inq-submit" disabled={loading}>
+                {loading ? "Sending..." : "Submit Inquiry"}
               </button>
+
+              {msg && <p className="inq-msg">{msg}</p>}
             </form>
           </motion.div>
         </motion.div>
