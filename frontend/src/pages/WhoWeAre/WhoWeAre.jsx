@@ -17,7 +17,7 @@ export default function WhoWeAre() {
   const team = [
     {
       name: "Sumit Singh",
-      role: "CTO",
+      role: "CTO / Backend Developer",
       email: "sumitrsingh53@gmail.com",
       img: sumit,
       quote: `"Execution is the bridge between ideas and success."`,
@@ -25,7 +25,7 @@ export default function WhoWeAre() {
     },
     {
       name: "Bishun Dev Mehta",
-      role: "Technical Head / Server Admin",
+      role: "Technical Head / Android Developer",
       email: "mehtavishnu567@gmail.com",
       img: bishun,
       quote: `"Discipline beats motivation — always."`,
@@ -40,28 +40,12 @@ export default function WhoWeAre() {
       linkedIn: "https://linkedin.com/in/sumit-projectlead",
     },
     {
-      name: "Sumit Singh",
-      role: "Backend Developer",
-      email: "sumitrsingh53@gmail.com",
-      img: sumit,
-      quote: `"Clean code always wins."`,
-      linkedIn: "https://linkedin.com/in/rohit",
-    },
-    {
       name: "Rohit Singh",
       role: "UI/UX Designer",
       email: "rohitkumar.getme@gmail.com",
       img: rohit,
       quote: `"Design is intelligence made visible."`,
       linkedIn: "https://linkedin.com/in/mahi",
-    },
-    {
-      name: "Bishun Dev Mehta",
-      role: "Android Developer",
-      email: "mehtavishnu567@gmail.com",
-      img: bishun,
-      quote: `"Innovation starts with curiosity."`,
-      linkedIn: "https://linkedin.com/in/bishun-android",
     },
   ];
 
