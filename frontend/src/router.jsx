@@ -58,9 +58,9 @@ export default function Router() {
           >
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/who-we-are" element={<WhoWeAre />} />
+              <Route path="/about" element={<WhoWeAre />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/it-solutions" element={<ItSolution />} />
+              <Route path="/services" element={<ItSolution />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/technologies" element={<Technologies />} />
               <Route path="/blogs" element={<Blogs />} />

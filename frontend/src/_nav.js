@@ -5,9 +5,9 @@
 
 export const publicNav = [
     { name: "Home", path: "/" },
-    { name: "Who We Are", path: "/who-we-are" },
+    { name: "About Us", path: "/about" },
     { name: "Portfolio", path: "/portfolio" },
-    { name: "IT Solutions", path: "/it-solutions" },
+    { name: "Services", path: "/services" },
     { name: "Gallery", path: "/gallery" },
     { name: "Technologies", path: "/technologies" },
     { name: "Blogs", path: "/blogs" },
