@@ -1,7 +1,13 @@
 import "./WhoWeAre.css";
 import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 import whoweare from "../../assets/images/pages/whoweare.jpg";
-import founder from "../../assets/images/pages/founder.jpg";
+
+// Founder Images
+import founderRohit from "../../assets/images/pages/founder.jpg";
+import founderSumit from "../../assets/images/pages/sumit.jpg";
+
+// Team Images
 import sumit from "../../assets/images/pages/sumit.jpg";
 import bishun from "../../assets/images/pages/bishun.jpg";
 import ashutosh from "../../assets/images/pages/ashutosh.jpg";
@@ -90,49 +96,106 @@ export default function WhoWeAre() {
         </p>
       </section>
 
-      {/* FOUNDER SECTION */}
-      <section className="wq-founder-section wq-animate-up">
-        <div className="wq-founder-left">
-          <h3 className="wq-founder-role">Founder & Managing Director</h3>
-          <h2 className="wq-founder-name">Mr. Rohit Kumar</h2>
+      {/* ===========================
+          TWO FOUNDERS SECTION
+      ============================ */}
+      <section className="wq-founders-two wq-animate-up">
+        {/* Founder Rohit */}
+        <div className="wq-founder-card">
+          <div className="wq-founder-left">
+            <h3 className="wq-founder-role">Founder & CEO</h3>
+            <h2 className="wq-founder-name">Mr. Rohit Kumar</h2>
 
-          <p className="wq-founder-desc">
-            Meet Mr. Rohit Kumar, the visionary founder & CEO of WisdomQuantums.
-            A leader driven by passion and purpose, he has transformed his
-            vision into reality with unwavering determination. Under his
-            leadership, WisdomQuantums has emerged as a trusted name in the IT
-            industry, known for innovation and client-focused excellence.
-          </p>
+            <p className="wq-founder-desc">
+              Mr. Rohit Kumar is the visionary mind behind WisdomQuantums, known
+              for his leadership and strategic thinking. His dedication and
+              innovative mindset have played a major role in establishing the
+              company as a trusted brand in the IT industry.
+            </p>
 
-          <div className="wq-founder-social">
-            <a
-              href="https://twitter.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter className="wq-social-icon" />
-            </a>
+            <div className="wq-founder-social">
+              <a
+                href="https://twitter.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="wq-social-icon" />
+              </a>
 
-            <a
-              href="https://www.linkedin.com/in/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="wq-social-icon" />
-            </a>
+              <a
+                href="https://www.linkedin.com/in/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="wq-social-icon" />
+              </a>
 
-            <a
-              href="https://www.instagram.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="wq-social-icon" />
-            </a>
+              <a
+                href="https://www.instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="wq-social-icon" />
+              </a>
+            </div>
+          </div>
+
+          <div className="wq-founder-right">
+            <img
+              src={founderRohit}
+              className="wq-founder-img"
+              alt="Founder Rohit"
+            />
           </div>
         </div>
 
-        <div className="wq-founder-right">
-          <img src={founder} className="wq-founder-img" alt="Founder" />
+        {/* Founder Sumit */}
+        <div className="wq-founder-card">
+          <div className="wq-founder-left">
+            <h3 className="wq-founder-role">Founder & CEO</h3>
+            <h2 className="wq-founder-name">Mr. Sumit Singh</h2>
+
+            <p className="wq-founder-desc">
+              Mr. Sumit Singh brings strong technical expertise and a
+              forward-thinking approach. His contributions in technology and
+              execution have been essential in driving the company’s growth and
+              innovation.
+            </p>
+
+            <div className="wq-founder-social">
+              <a
+                href="https://twitter.com/sumit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="wq-social-icon" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/sumit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="wq-social-icon" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/sumit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="wq-social-icon" />
+              </a>
+            </div>
+          </div>
+
+          <div className="wq-founder-right">
+            <img
+              src={founderSumit}
+              className="wq-founder-img"
+              alt="Founder Sumit"
+            />
+          </div>
         </div>
       </section>
 
@@ -149,7 +212,6 @@ export default function WhoWeAre() {
             {/* FRONT */}
             <div className="wq-flip-inner wq-flip-front">
               <img src={t.img} className="wq-team-img" alt={t.name} />
-
               <div className="wq-team-info">
                 <h3>{t.name}</h3>
                 <p>{t.role}</p>
@@ -161,7 +223,9 @@ export default function WhoWeAre() {
             <div className="wq-flip-inner wq-flip-back">
               <div className="wq-team-overlay">
                 <p className="wq-team-quote">{t.quote}</p>
-                <FaLinkedin className="wq-team-icon" />
+                <a href={t.linkedIn} target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin className="wq-team-icon" />
+                </a>
               </div>
             </div>
           </div>
